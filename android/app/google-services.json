@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "746916425463",
+    "project_id": "tamil-keyboard-93a7b",
+    "storage_bucket": "tamil-keyboard-93a7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746916425463:android:425c7c0f34ae6e4c1f6df2",
+        "android_client_info": {
+          "package_name": "com.example.keyboard_tamil"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv3InDbUfCOSjoQp8TEJgAQQITHZzfUnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
