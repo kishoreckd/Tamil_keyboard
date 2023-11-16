@@ -23,6 +23,8 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
     text = '';
   }
 
+
+
   keyPress(val) {
     setState(() {
       if (uyirEzhuthukal.any((e) => e.contains(val))) {
@@ -150,8 +152,6 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
   Widget build(BuildContext context) {
     double baseWidth = 375;
     double fem = MediaQuery.of(context).size.width / baseWidth;
-    final screenHeight = MediaQuery.of(context).size.height;
-    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
         child: SizedBox(
@@ -160,7 +160,7 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
             children: [
               renderText(),
               Container(
-                height: screenHeight * 0.37,
+                height: 320,
                 decoration: const BoxDecoration(color: Color(0XFF5B5D72)),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 2),
@@ -264,91 +264,84 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
                       const SizedBox(
                         height: 10,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                SizedBox(
-                                    width: screenWidth * 0.25,
-                                    child: Column(
-                                      children: [...renderKeyboard()],
-                                    )),
-                                SizedBox(
-                                    width: screenWidth * 0.17,
-                                    child: Column(
-                                      children: [...renderKeyboard2()],
-                                    )),
-                                SizedBox(
-                                    width: screenWidth * 0.50,
-                                    child: Column(
-                                      children: [...renderKeyboard3()],
-                                    )),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal:4.0),
-                              child: SizedBox(
-                                  child: Row(
-                                children: [
-                                  KeyboardKey(
-                                      label: '?123',
-                                      onTap: '?123' is Widget
-                                          ? onBackspacePress
-                                          : keyPress,
-                                      value: '?123'),
-                                  KeyboardKey(
-                                      label: 'ஃ',
-                                      onTap: 'ஃ' is Widget
-                                          ? onBackspacePress
-                                          : keyPress,
-                                      value: 'ஃ'),
-                                  Spacebar(
-                                      label: ' ',
-                                      onTap: ' ' is Widget
-                                          ? onBackspacePress
-                                          : keyPress,
-                                      value: ' '),
-                                  KeyboardKey(
-                                      label: '்',
-                                      onTap: '்' is Widget
-                                          ? onBackspacePress
-                                          : keyPress,
-                                      value: '்'),
-                                  KeyboardKey(
-                                      label: '.',
-                                      onTap: '.' is Widget
-                                          ? onBackspacePress
-                                          : keyPress,
-                                      value: '.'),
-                                  KeyboardKey(
-                                      label: const Icon(
-                                        Icons.keyboard_backspace,
-                                        color: Colors.white,
-                                      ),
-                                      onTap: const Icon(Icons.keyboard_backspace)
-                                              is Widget
-                                          ? onBackspacePress
-                                          : keyPress,
-                                      value:
-                                          const Icon(Icons.keyboard_backspace)),
-                                  KeyboardKey(
-                                      label: const Icon(
-                                        Icons.backspace,
-                                        color: Colors.white,
-                                        size: 16,
-                                      ),
-                                      onTap: const Icon(Icons.backspace) is Widget
-                                          ? onBackspacePress
-                                          : keyPress,
-                                      value: const Icon(Icons.backspace)),
-                                ],
-                              )),
-                            ),
-                          ],
-                        ),
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              SizedBox(
+                                  width: 110,
+                                  child: Column(
+                                    children: [...renderKeyboard()],
+                                  )),
+                              SizedBox(
+                                  width: 80,
+                                  child: Column(
+                                    children: [...renderKeyboard2()],
+                                  )),
+                              SizedBox(
+                                  width: 210,
+                                  child: Column(
+                                    children: [...renderKeyboard3()],
+                                  )),
+                            ],
+                          ),
+                          SizedBox(
+                              child: Row(
+                            children: [
+                              KeyboardKey(
+                                  label: '?123',
+                                  onTap: '?123' is Widget
+                                      ? onBackspacePress
+                                      : keyPress,
+                                  value: '?123'),
+                              KeyboardKey(
+                                  label: 'ஃ',
+                                  onTap: 'ஃ' is Widget
+                                      ? onBackspacePress
+                                      : keyPress,
+                                  value: 'ஃ'),
+                              Spacebar(
+                                  label: ' ',
+                                  onTap: ' ' is Widget
+                                      ? onBackspacePress
+                                      : keyPress,
+                                  value: ' '),
+                              KeyboardKey(
+                                  label: '்',
+                                  onTap: '்' is Widget
+                                      ? onBackspacePress
+                                      : keyPress,
+                                  value: '்'),
+                              KeyboardKey(
+                                  label: '.',
+                                  onTap: '.' is Widget
+                                      ? onBackspacePress
+                                      : keyPress,
+                                  value: '.'),
+                              KeyboardKey(
+                                  label: const Icon(
+                                    Icons.keyboard_backspace,
+                                    color: Colors.white,
+                                  ),
+                                  onTap: const Icon(Icons.keyboard_backspace)
+                                          is Widget
+                                      ? onBackspacePress
+                                      : keyPress,
+                                  value: const Icon(Icons.keyboard_backspace)),
+                              KeyboardKey(
+                                  label: const Icon(
+                                    Icons.backspace,
+                                    color: Colors.white,
+                                    size: 16,
+                                  ),
+                                  onTap: const Icon(Icons.backspace) is Widget
+                                      ? onBackspacePress
+                                      : keyPress,
+                                  value: const Icon(Icons.backspace)),
+                            ],
+                          )),
+                        ],
                       ),
                     ],
                   ),

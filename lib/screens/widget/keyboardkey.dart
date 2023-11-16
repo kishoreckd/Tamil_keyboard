@@ -35,8 +35,6 @@ class _KeyboardKeyState extends State<KeyboardKey> {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-    final screenwidth = MediaQuery.of(context).size.width;
     return InkWell(
       onTap: () {
         widget.onTap(widget.value);
@@ -47,8 +45,8 @@ class _KeyboardKeyState extends State<KeyboardKey> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 4),
             child: Container(
-              height: screenHeight * 0.05,
-              width: screenwidth * 0.09,
+              height: 40,
+              width: 40,
               decoration: BoxDecoration(
                   color: const Color(0xFF10121B),
                   borderRadius: BorderRadius.circular(7)),
@@ -95,9 +93,6 @@ class _SpacebarState extends State<Spacebar> {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-    final screenWidth = MediaQuery.of(context).size.width;
-
     return InkWell(
       onTap: () {
         widget.onTap(widget.value);
@@ -108,8 +103,8 @@ class _SpacebarState extends State<Spacebar> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 4),
             child: Container(
-              height: screenHeight * 0.05,
-              width: screenWidth * 0.283,
+              height: 40,
+              width: 100,
               decoration: BoxDecoration(
                   color: const Color(0xFF10121B),
                   borderRadius: BorderRadius.circular(7)),
