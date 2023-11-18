@@ -23,8 +23,6 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
     text = '';
   }
 
-
-
   keyPress(val) {
     setState(() {
       if (uyirEzhuthukal.any((e) => e.contains(val))) {
@@ -160,110 +158,16 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
             children: [
               renderText(),
               Container(
-                height: 320,
-                decoration: const BoxDecoration(color: Color(0XFF5B5D72)),
+                height: 250,
+                decoration: const BoxDecoration(color: Color(0XFF202020)),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 2),
                   child: Column(
                     children: [
                       const SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: const Color(0xFF747794),
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 10),
-                                  child: Container(
-                                      width: 30 * fem,
-                                      height: 30 * fem,
-                                      decoration: BoxDecoration(
-                                          color: const Color.fromARGB(
-                                              159, 227, 227, 235),
-                                          borderRadius:
-                                              BorderRadius.circular(20)),
-                                      child: const Icon(
-                                        Icons.emoji_emotions_outlined,
-                                        size: 18,
-                                      )),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Container(
-                                    decoration: BoxDecoration(
-                                        color: const Color.fromARGB(
-                                            159, 227, 227, 235),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    width: 30 * fem,
-                                    height: 30 * fem,
-                                    child: const Icon(
-                                      Icons.edit_document,
-                                      size: 18,
-                                    )),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Container(
-                                    decoration: BoxDecoration(
-                                        color: const Color.fromARGB(
-                                            159, 227, 227, 235),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    width: 30 * fem,
-                                    height: 30 * fem,
-                                    child: const Icon(
-                                      Icons.keyboard_voice,
-                                      size: 18,
-                                    )),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Container(
-                                    decoration: BoxDecoration(
-                                        color: const Color.fromARGB(
-                                            159, 227, 227, 235),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    width: 30 * fem,
-                                    height: 30 * fem,
-                                    child:
-                                        const Icon(Icons.settings, size: 18)),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(right: 10),
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                          color: const Color.fromARGB(
-                                              159, 227, 227, 235),
-                                          borderRadius:
-                                              BorderRadius.circular(20)),
-                                      width: 30 * fem,
-                                      height: 30 * fem,
-                                      child: const Icon(
-                                        Icons.more_horiz,
-                                        size: 18,
-                                      )),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
+                  
                       Column(
                         children: [
                           Row(
@@ -338,6 +242,7 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
                                   onTap: const Icon(Icons.backspace) is Widget
                                       ? onBackspacePress
                                       : keyPress,
+                                      
                                   value: const Icon(Icons.backspace)),
                             ],
                           )),

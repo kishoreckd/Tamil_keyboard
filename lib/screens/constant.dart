@@ -11,7 +11,7 @@ const uyirEzhuthukal = [
   ],
 ];
 const tamilSymbols = [
-  ["ி", "ீ"],
+  [ "ி", "ீ"],
   ["ு", "ூ"],
   ["ெ", "ே"],
   ["ை", "ா"]
@@ -23,13 +23,13 @@ const meiEzhuthukal = [
   ["ஜ", "ஷ", "ஸ", "ஹ", "ஸ்ரீ", "க்ஷ"]
 ];
 
- const keys4 = [
-    '?123',
-    'ஃ',
-    '',
-    "்",
-    '',
-    '.',
-    "⏎",
-     Icon(Icons.keyboard_backspace)
-  ];
+const keys4 = [
+  '?123',
+  'ஃ',
+  '',
+  "்",
+  '',
+  '.',
+  "⏎",
+  Icon(Icons.keyboard_backspace)
+];

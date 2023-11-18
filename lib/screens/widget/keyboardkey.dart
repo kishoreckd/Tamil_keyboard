@@ -48,7 +48,7 @@ class _KeyboardKeyState extends State<KeyboardKey> {
               height: 40,
               width: 40,
               decoration: BoxDecoration(
-                  color: const Color(0xFF10121B),
+                  color: const Color(0xFF313131),
                   borderRadius: BorderRadius.circular(7)),
               child: renderLabel(),
             ),
@@ -106,7 +106,7 @@ class _SpacebarState extends State<Spacebar> {
               height: 40,
               width: 100,
               decoration: BoxDecoration(
-                  color: const Color(0xFF10121B),
+                  color: const Color(0xFF313131),
                   borderRadius: BorderRadius.circular(7)),
               child: renderLabel(),
             ),
