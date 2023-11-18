@@ -1,21 +1,19 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:keyboard_tamil/screens/constant.dart';
 import 'package:keyboard_tamil/screens/widget/keyboardkey.dart';
-
-// ignore_for_file: library_private_types_in_public_api
-
-// ignore_for_file: unnecessary_type_check
 
 class TamilKeyboard extends StatefulWidget {
   const TamilKeyboard({super.key});
 
   @override
-  _TamilKeyboardState createState() => _TamilKeyboardState();
+  TamilKeyboardState createState() => TamilKeyboardState();
 }
 
-class _TamilKeyboardState extends State<TamilKeyboard> {
+class TamilKeyboardState extends State<TamilKeyboard> {
   late String text;
   List? textStore;
+  Timer? longPressTimer; // Add this line
 
   @override
   void initState() {
@@ -25,6 +23,12 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
 
   keyPress(val) {
     setState(() {
+      if (val == ' ') {
+        text += val;
+      }
+      if (val == '\n') {
+        text += val;
+      }
       if (uyirEzhuthukal.any((e) => e.contains(val))) {
         textStore = [];
 
@@ -64,13 +68,16 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
         if (val == "ெ" || val == "ே" || val == "ை") {
           textStore = [val];
         }
-        if (val == "ெ" || val == "ே" || val == "ை") {}
         if (meiEzhuthukal.any((e) => e.contains(text[text.length - 1]))) {
-          text += val;
+          if (val == "ி" ||
+              val == "ீ" ||
+              val == "ு" ||
+              val == "ூ" ||
+              val == "ா") {
+            text += val;
+          }
         }
         if (tamilSymbols.any((e) => e.contains(text[text.length - 1]))) {}
-      } else {
-        // text += val;
       }
     });
   }
@@ -78,6 +85,14 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
   onBackspacePress(val) {
     setState(() {
       text = text.substring(0, text.length - 1);
+    });
+  }
+
+  onBackspacePressLong(val) {
+    longPressTimer = Timer.periodic(Duration(milliseconds: 100), (timer) {
+      setState(() {
+        text = text.substring(0, text.length - 1);
+      });
     });
   }
 
@@ -90,7 +105,7 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
               return Expanded(
                 child: KeyboardKey(
                   label: y,
-                  onTap: y is Widget ? onBackspacePress : keyPress,
+                  onTap: keyPress,
                   value: y,
                 ),
               );
@@ -108,7 +123,7 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
               return Expanded(
                 child: KeyboardKey(
                   label: y,
-                  onTap: y is Widget ? onBackspacePress : keyPress,
+                  onTap: keyPress,
                   value: y,
                 ),
               );
@@ -126,7 +141,7 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
               return Expanded(
                 child: KeyboardKey(
                   label: y,
-                  onTap: y is Widget ? onBackspacePress : keyPress,
+                  onTap: keyPress,
                   value: y,
                 ),
               );
@@ -148,8 +163,6 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 375;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
     return Scaffold(
       body: SafeArea(
         child: SizedBox(
@@ -167,7 +180,6 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
                       const SizedBox(
                         height: 20,
                       ),
-                  
                       Column(
                         children: [
                           Row(
@@ -194,56 +206,59 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
                               child: Row(
                             children: [
                               KeyboardKey(
-                                  label: '?123',
-                                  onTap: '?123' is Widget
-                                      ? onBackspacePress
-                                      : keyPress,
-                                  value: '?123'),
+                                  label: '?123', onTap: keyPress, value: ''),
                               KeyboardKey(
-                                  label: 'ஃ',
-                                  onTap: 'ஃ' is Widget
-                                      ? onBackspacePress
-                                      : keyPress,
-                                  value: 'ஃ'),
-                              Spacebar(
-                                  label: ' ',
-                                  onTap: ' ' is Widget
-                                      ? onBackspacePress
-                                      : keyPress,
-                                  value: ' '),
+                                  label: 'ஃ', onTap: keyPress, value: 'ஃ'),
+                              Spacebar(label: ' ', onTap: keyPress, value: ' '),
                               KeyboardKey(
-                                  label: '்',
-                                  onTap: '்' is Widget
-                                      ? onBackspacePress
-                                      : keyPress,
-                                  value: '்'),
+                                  label: '்', onTap: keyPress, value: '்'),
                               KeyboardKey(
-                                  label: '.',
-                                  onTap: '.' is Widget
-                                      ? onBackspacePress
-                                      : keyPress,
-                                  value: '.'),
+                                  label: '.', onTap: keyPress, value: '.'),
                               KeyboardKey(
                                   label: const Icon(
-                                    Icons.keyboard_backspace,
-                                    color: Colors.white,
-                                  ),
-                                  onTap: const Icon(Icons.keyboard_backspace)
-                                          is Widget
-                                      ? onBackspacePress
-                                      : keyPress,
-                                  value: const Icon(Icons.keyboard_backspace)),
-                              KeyboardKey(
-                                  label: const Icon(
-                                    Icons.backspace,
+                                    Icons.keyboard_return_sharp,
                                     color: Colors.white,
                                     size: 16,
                                   ),
-                                  onTap: const Icon(Icons.backspace) is Widget
-                                      ? onBackspacePress
-                                      : keyPress,
-                                      
-                                  value: const Icon(Icons.backspace)),
+                                  onTap: keyPress,
+                                  value: '\n'),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    text = text.substring(0, text.length - 1);
+                                  });
+                                },
+                                onLongPressUp: () {
+                                  setState(() {
+                                    longPressTimer?.cancel();
+                                  });
+                                },
+                                onLongPress: () {
+                                  longPressTimer = Timer.periodic(
+                                      const Duration(milliseconds: 100),
+                                      (timer) {
+                                    setState(() {
+                                      text = text.substring(0, text.length - 1);
+                                    });
+                                  });
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 3, horizontal: 4),
+                                  child: Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                        color: const Color(0xFF313131),
+                                        borderRadius: BorderRadius.circular(7)),
+                                    child: const Icon(
+                                      Icons.backspace,
+                                      size: 16,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ],
                           )),
                         ],
@@ -259,9 +274,3 @@ class _TamilKeyboardState extends State<TamilKeyboard> {
     );
   }
 }
-
-//  SvgPicture.string(
-//                                 logo,
-//                                 allowDrawingOutsideViewBox: true,
-//                                 fit: BoxFit.fill,
-//                               )

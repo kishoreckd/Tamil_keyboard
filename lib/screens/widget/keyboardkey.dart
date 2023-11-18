@@ -78,17 +78,13 @@ class Spacebar extends StatefulWidget {
 
 class _SpacebarState extends State<Spacebar> {
   renderLabel() {
-    if (widget.label is String) {
-      return Center(
-        child: Text(
-          widget.label,
-          style: const TextStyle(fontSize: 14.0, color: Colors.white),
-          textAlign: TextAlign.center,
-        ),
-      );
-    } else {
-      return widget.label;
-    }
+    return Center(
+      child: Text(
+        widget.label,
+        style: const TextStyle(fontSize: 14.0, color: Colors.white),
+        textAlign: TextAlign.center,
+      ),
+    );
   }
 
   @override
