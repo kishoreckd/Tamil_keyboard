@@ -89,7 +89,7 @@ class TamilKeyboardState extends State<TamilKeyboard> {
   }
 
   onBackspacePressLong(val) {
-    longPressTimer = Timer.periodic(Duration(milliseconds: 100), (timer) {
+    longPressTimer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
       setState(() {
         text = text.substring(0, text.length - 1);
       });
@@ -170,7 +170,7 @@ class TamilKeyboardState extends State<TamilKeyboard> {
           child: Column(
             children: [
               renderText(),
-              Container(
+              Ink(
                 height: 250,
                 decoration: const BoxDecoration(color: Color(0XFF202020)),
                 child: Padding(
@@ -222,39 +222,46 @@ class TamilKeyboardState extends State<TamilKeyboard> {
                                   ),
                                   onTap: keyPress,
                                   value: '\n'),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    text = text.substring(0, text.length - 1);
-                                  });
-                                },
-                                onLongPressUp: () {
-                                  setState(() {
-                                    longPressTimer?.cancel();
-                                  });
-                                },
-                                onLongPress: () {
-                                  longPressTimer = Timer.periodic(
-                                      const Duration(milliseconds: 100),
-                                      (timer) {
+                              InkWell(
+                                customBorder: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(7),
+                                ),
+                                child: GestureDetector(
+                                  onTap: () {
                                     setState(() {
                                       text = text.substring(0, text.length - 1);
                                     });
-                                  });
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 3, horizontal: 4),
-                                  child: Container(
-                                    height: 40,
-                                    width: 40,
-                                    decoration: BoxDecoration(
-                                        color: const Color(0xFF313131),
-                                        borderRadius: BorderRadius.circular(7)),
-                                    child: const Icon(
-                                      Icons.backspace,
-                                      size: 16,
-                                      color: Colors.white,
+                                  },
+                                  onLongPressUp: () {
+                                    setState(() {
+                                      longPressTimer?.cancel();
+                                    });
+                                  },
+                                  onLongPress: () {
+                                    longPressTimer = Timer.periodic(
+                                        const Duration(milliseconds: 100),
+                                        (timer) {
+                                      setState(() {
+                                        text =
+                                            text.substring(0, text.length - 1);
+                                      });
+                                    });
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 3, horizontal: 4),
+                                    child: Ink(
+                                      height: 40,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                          color: const Color(0xFF313131),
+                                          borderRadius:
+                                              BorderRadius.circular(7)),
+                                      child: const Icon(
+                                        Icons.backspace,
+                                        size: 16,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),
