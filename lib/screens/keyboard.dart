@@ -163,6 +163,9 @@ class TamilKeyboardState extends State<TamilKeyboard> {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
         child: SizedBox(
@@ -174,11 +177,11 @@ class TamilKeyboardState extends State<TamilKeyboard> {
                 height: 250,
                 decoration: const BoxDecoration(color: Color(0XFF202020)),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2),
+                  padding: const EdgeInsets.symmetric(horizontal: 3.0),
                   child: Column(
                     children: [
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: screenHeight * 0.02,
                       ),
                       Column(
                         children: [
@@ -186,88 +189,94 @@ class TamilKeyboardState extends State<TamilKeyboard> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               SizedBox(
-                                  width: 110,
+                                  width: screenWidth * 0.26,
                                   child: Column(
                                     children: [...renderKeyboard()],
                                   )),
                               SizedBox(
-                                  width: 80,
+                                  width: screenWidth * 0.17,
                                   child: Column(
                                     children: [...renderKeyboard2()],
                                   )),
                               SizedBox(
-                                  width: 210,
+                                  width: screenWidth * 0.50,
                                   child: Column(
                                     children: [...renderKeyboard3()],
                                   )),
                             ],
                           ),
-                          SizedBox(
-                              child: Row(
-                            children: [
-                              KeyboardKey(
-                                  label: '?123', onTap: keyPress, value: ''),
-                              KeyboardKey(
-                                  label: 'ஃ', onTap: keyPress, value: 'ஃ'),
-                              Spacebar(label: ' ', onTap: keyPress, value: ' '),
-                              KeyboardKey(
-                                  label: '்', onTap: keyPress, value: '்'),
-                              KeyboardKey(
-                                  label: '.', onTap: keyPress, value: '.'),
-                              KeyboardKey(
-                                  label: const Icon(
-                                    Icons.keyboard_return_sharp,
-                                    color: Colors.white,
-                                    size: 16,
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 4.0),
+                            child: SizedBox(
+                                child: Row(
+                              children: [
+                                KeyboardKey(
+                                    label: '?123', onTap: keyPress, value: ''),
+                                KeyboardKey(
+                                    label: 'ஃ', onTap: keyPress, value: 'ஃ'),
+                                Spacebar(
+                                    label: ' ', onTap: keyPress, value: ' '),
+                                KeyboardKey(
+                                    label: '்', onTap: keyPress, value: '்'),
+                                KeyboardKey(
+                                    label: '.', onTap: keyPress, value: '.'),
+                                KeyboardKey(
+                                    label: const Icon(
+                                      Icons.keyboard_return_sharp,
+                                      color: Colors.white,
+                                      size: 16,
+                                    ),
+                                    onTap: keyPress,
+                                    value: '\n'),
+                                InkWell(
+                                  customBorder: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(7),
                                   ),
-                                  onTap: keyPress,
-                                  value: '\n'),
-                              InkWell(
-                                customBorder: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(7),
-                                ),
-                                child: GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      text = text.substring(0, text.length - 1);
-                                    });
-                                  },
-                                  onLongPressUp: () {
-                                    setState(() {
-                                      longPressTimer?.cancel();
-                                    });
-                                  },
-                                  onLongPress: () {
-                                    longPressTimer = Timer.periodic(
-                                        const Duration(milliseconds: 100),
-                                        (timer) {
+                                  child: GestureDetector(
+                                    onTap: () {
                                       setState(() {
                                         text =
                                             text.substring(0, text.length - 1);
                                       });
-                                    });
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 3, horizontal: 4),
-                                    child: Ink(
-                                      height: 40,
-                                      width: 40,
-                                      decoration: BoxDecoration(
-                                          color: const Color(0xFF313131),
-                                          borderRadius:
-                                              BorderRadius.circular(7)),
-                                      child: const Icon(
-                                        Icons.backspace,
-                                        size: 16,
-                                        color: Colors.white,
+                                    },
+                                    onLongPressUp: () {
+                                      setState(() {
+                                        longPressTimer?.cancel();
+                                      });
+                                    },
+                                    onLongPress: () {
+                                      longPressTimer = Timer.periodic(
+                                          const Duration(milliseconds: 100),
+                                          (timer) {
+                                        setState(() {
+                                          text = text.substring(
+                                              0, text.length - 1);
+                                        });
+                                      });
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 3, horizontal: 4),
+                                      child: Ink(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                            color: const Color(0xFF313131),
+                                            borderRadius:
+                                                BorderRadius.circular(7)),
+                                        child: const Icon(
+                                          Icons.backspace,
+                                          size: 16,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          )),
+                              ],
+                            )),
+                          ),
                         ],
                       ),
                     ],

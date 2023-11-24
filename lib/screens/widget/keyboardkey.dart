@@ -38,7 +38,7 @@ class _KeyboardKeyState extends State<KeyboardKey> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 4),
+          padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 1.8),
           child: InkWell(
             customBorder: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
@@ -90,13 +90,18 @@ class _SpacebarState extends State<Spacebar> {
     );
   }
 
+  bool isMobile(BuildContext context) =>
+      MediaQuery.of(context).size.width < 600;
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 4),
-          child: InkWell(
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 3.0),
+      child: Column(
+        children: [
+          InkWell(
             customBorder: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
             ),
@@ -105,16 +110,16 @@ class _SpacebarState extends State<Spacebar> {
               SystemSound.play(SystemSoundType.click);
             },
             child: Ink(
-              height: 40,
-              width: 100,
+              height: screenHeight * 0.0445,
+              width: screenWidth * 0.304,
               decoration: BoxDecoration(
                   color: const Color(0xFF313131),
                   borderRadius: BorderRadius.circular(7)),
               child: renderLabel(),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
