@@ -167,25 +167,26 @@ class TamilKeyboardState extends State<TamilKeyboard> {
     final screenWidth = MediaQuery.of(context).size.width;
     TextEditingController _titlecontroller = TextEditingController();
     final TextEditingController _contentcontroller = TextEditingController();
+    _contentcontroller.text = text;
 
-    FocusNode _focusNode1 = FocusNode();
-    FocusNode _focusNode2 = FocusNode();
+    // FocusNode _focusNode1 = FocusNode();
+    // FocusNode _focusNode2 = FocusNode();
 
-    @override
-    void dispose() {
-      _focusNode1.dispose();
-      _focusNode2.dispose();
-      super.dispose();
-    }
+    // @override
+    // void dispose() {
+    //   _focusNode1.dispose();
+    //   _focusNode2.dispose();
+    //   super.dispose();
+    // }
 
-    void _handleFocusChange() {
-      if (_focusNode1.hasFocus) {
-        print('1');
-        _titlecontroller.text = text;
-      } else if (_focusNode2.hasFocus) {
-        _contentcontroller.text = text;
-      }
-    }
+    // void _handleFocusChange() {
+    //   if (_focusNode1.hasFocus) {
+    //     print('1');
+    //     _titlecontroller.text = text;
+    //   } else if (_focusNode2.hasFocus) {
+    //     _contentcontroller.text = text;
+    //   }
+    // }
 
     // @override
     // void initState() {
@@ -215,9 +216,9 @@ class TamilKeyboardState extends State<TamilKeyboard> {
                 child: Column(
                   children: [
                     TextField(
-                      onTap: _handleFocusChange,
-                      // controller: _titlecontroller,
-                      focusNode: _focusNode1,
+                      // onTap: _handleFocusChange,
+                      controller: _titlecontroller,
+                      // focusNode: _focusNode1,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'தலைப்பு',
@@ -237,9 +238,9 @@ class TamilKeyboardState extends State<TamilKeyboard> {
                       color: Color(0xFFEBE9F0),
                     ),
                     TextField(
-                      onTap: _handleFocusChange,
-                      // controller: _contentcontroller,
-                      focusNode: _focusNode2,
+                      // onTap: _handleFocusChange,
+                      controller: _contentcontroller,
+                      // focusNode: _focusNode2,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Add Title',
