@@ -165,14 +165,99 @@ class TamilKeyboardState extends State<TamilKeyboard> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
+    TextEditingController _titlecontroller = TextEditingController();
+    final TextEditingController _contentcontroller = TextEditingController();
+
+    FocusNode _focusNode1 = FocusNode();
+    FocusNode _focusNode2 = FocusNode();
+
+    @override
+    void dispose() {
+      _focusNode1.dispose();
+      _focusNode2.dispose();
+      super.dispose();
+    }
+
+    void _handleFocusChange() {
+      if (_focusNode1.hasFocus) {
+        print('1');
+        _titlecontroller.text = text;
+      } else if (_focusNode2.hasFocus) {
+        _contentcontroller.text = text;
+      }
+    }
+
+    // @override
+    // void initState() {
+    //   super.initState();
+    //   _focusNode1.addListener(() {
+    //     if (_focusNode1.hasFocus) {
+    //       print('TextField 1 is selected');
+    //     }
+    //   });
+
+    //   _focusNode2.addListener(() {
+    //     if (_focusNode2.hasFocus) {
+    //       print('TextField 2 is selected');
+    //     }
+    //   });
+    // }
 
     return Scaffold(
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              renderText(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  children: [
+                    TextField(
+                      onTap: _handleFocusChange,
+                      // controller: _titlecontroller,
+                      focusNode: _focusNode1,
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'தலைப்பு',
+                        hintStyle: TextStyle(
+                          fontSize: 18,
+                          letterSpacing: 1,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w600,
+                          color: Color(
+                            0xFFC3C3C3,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const Divider(
+                      thickness: 1,
+                      color: Color(0xFFEBE9F0),
+                    ),
+                    TextField(
+                      onTap: _handleFocusChange,
+                      // controller: _contentcontroller,
+                      focusNode: _focusNode2,
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Add Title',
+                        hintStyle: TextStyle(
+                          fontSize: 18,
+                          letterSpacing: 1,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w600,
+                          color: Color(
+                            0xFFC3C3C3,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // renderText(),
               Ink(
                 height: 250,
                 decoration: const BoxDecoration(color: Color(0XFF202020)),
