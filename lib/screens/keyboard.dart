@@ -243,7 +243,7 @@ class TamilKeyboardState extends State<TamilKeyboard> {
                       // focusNode: _focusNode2,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Add Title',
+                        hintText: 'உள்ளடக்கம்',
                         hintStyle: TextStyle(
                           fontSize: 18,
                           letterSpacing: 1,
