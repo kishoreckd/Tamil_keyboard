@@ -32,6 +32,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   OverlayEntry? overlayEntry;
+  TextEditingController _textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
           return Column(
             children: [
               TextField(
+                controller: _textController, // Use the TextEditingController
+
                 onTap: () {
                   _showCustomKeyboard(context);
                 },
@@ -69,6 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onKeyPressed: (String value) {
                 // Handle key presses
               },
+              textController: _textController, // Use the TextEditingController
             ),
           ),
         ),
@@ -86,8 +90,11 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class CustomKeyboard extends StatefulWidget {
+  const CustomKeyboard(
+      {required this.onKeyPressed, required this.textController});
+
   final Function(String) onKeyPressed;
-  CustomKeyboard({required this.onKeyPressed});
+  final TextEditingController textController;
 
   @override
   State<CustomKeyboard> createState() => _CustomKeyboardState();
@@ -109,74 +116,88 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
   keyPress(val) {
     setState(() {
       if (val == ' ') {
-        text += val;
+        widget.textController.text += val;
       }
       if (val == '\n') {
-        text += val;
+        widget.textController.text += val;
       }
       if (uyirEzhuthukal.any((e) => e.contains(val))) {
         textStore = [];
-
-        text += val;
+        widget.textController.text += val;
       }
       if (val == "்") {
-        if (meiEzhuthukal.any((e) => e.contains(text[text.length - 1]))) {
-          text += val;
+        if (meiEzhuthukal.any((e) => e.contains(widget
+            .textController.text[widget.textController.text.length - 1]))) {
+          widget.textController.text += val;
         }
       }
       if (val == "ஃ") {
-        text += val;
+        widget.textController.text += val;
       }
 
-      ///Uyir mei eluthu logics
+      /// Uyir mei eluthu logics
       if (meiEzhuthukal.any((e) => e.contains(val))) {
         if (textStore?.length == 1) {
           textStore?.add(val);
-          text += textStore?[1] + textStore?[0];
+          widget.textController.text += textStore?[1] + textStore?[0];
           textStore = [];
           return;
         } else {
           textStore = [];
-
-          text += val;
+          widget.textController.text += val;
         }
       }
 
       if (tamilSymbols.any((e) => e.contains(val))) {
         textStore = [];
-
         if (val == "ா") {
-          if (text[text.length - 1] == "ெ" || text[text.length - 1] == "ே") {
-            text += val;
+          if (widget.textController
+                      .text[widget.textController.text.length - 1] ==
+                  "ெ" ||
+              widget.textController
+                      .text[widget.textController.text.length - 1] ==
+                  "ே") {
+            widget.textController.text += val;
           }
         }
         if (val == "ெ" || val == "ே" || val == "ை") {
           textStore = [val];
         }
-        if (meiEzhuthukal.any((e) => e.contains(text[text.length - 1]))) {
+        if (meiEzhuthukal.any((e) => e.contains(widget
+            .textController.text[widget.textController.text.length - 1]))) {
           if (val == "ி" ||
               val == "ீ" ||
               val == "ு" ||
               val == "ூ" ||
               val == "ா") {
-            text += val;
+            widget.textController.text += val;
           }
         }
-        if (tamilSymbols.any((e) => e.contains(text[text.length - 1]))) {}
+        if (tamilSymbols.any((e) => e.contains(widget
+            .textController.text[widget.textController.text.length - 1]))) {}
       }
+
+      // Call onKeyPressed with the updated text
+      widget.onKeyPressed(widget.textController.text);
     });
   }
 
-  onBackspacePress(val) {
+  onBackspacePress() {
     setState(() {
-      text = text.substring(0, text.length - 1);
+      widget.textController.text = widget.textController.text.isNotEmpty
+          ? widget.textController.text
+              .substring(0, widget.textController.text.length - 1)
+          : ''; // Update the text in the TextField
     });
   }
 
-  onBackspacePressLong(val) {
-    longPressTimer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
+  onBackspacePressLong() {
+    longPressTimer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
       setState(() {
-        text = text.substring(0, text.length - 1);
+        widget.textController.text = widget.textController.text.isNotEmpty
+            ? widget.textController.text
+                .substring(0, widget.textController.text.length - 1)
+            : ''; // Update the text in the TextField
       });
     });
   }
@@ -290,7 +311,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          text = text.substring(0, text.length - 1);
+                          onBackspacePress(); // Call onBackspacePress with an empty string
                         });
                       },
                       onLongPressUp: () {
@@ -303,7 +324,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
                           const Duration(milliseconds: 100),
                           (timer) {
                             setState(() {
-                              text = text.substring(0, text.length - 1);
+                              onBackspacePressLong(); // Call onBackspacePressLong with an empty string
                             });
                           },
                         );
