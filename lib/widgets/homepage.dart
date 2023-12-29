@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       decoration: const InputDecoration(
                           border: InputBorder.none,
                           hintText: 'எழுதுக....',
-                          hintStyle: TextStyle(color: Colors.white)),
+                          hintStyle: TextStyle(color: Colors.white38)),
                       maxLines: null,
                       keyboardType: TextInputType.multiline,
                       controller: _textController,
@@ -126,226 +126,6 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
   // keyPress(val) {
   //   setState(() {
   //     final currentCursorPosition = widget.textController.selection.start;
-
-  //     if (val == ' ' || val == '\n' || val == 'ஃ') {
-  //       widget.textController.text = widget.textController.text
-  //           .replaceRange(currentCursorPosition, currentCursorPosition, val);
-  //     }
-
-  //     // if (uyirEzhuthukal.any((e) => e.contains(val))) {
-  //     //   textStore = [];
-  //     //   widget.textController.text = widget.textController.text
-  //     //       .replaceRange(currentCursorPosition, currentCursorPosition, val);
-  //     // }
-
-  //     // if (uyirEzhuthukal.any((e) => e.contains(val))) {
-  //     //   textStore = [];
-  //     //   final currentCursorPosition = widget.textController.selection.start;
-  //     //   widget.textController.text = widget.textController.text.replaceRange(
-  //     //     currentCursorPosition,
-  //     //     currentCursorPosition,
-  //     //     val,
-  //     //   );
-  //     // }
-  //     if (val == "்") {
-  //       if (meiEzhuthukal.any((e) => e.contains(widget
-  //           .textController.text[widget.textController.text.length - 1]))) {
-  //         final currentCursorPosition = widget.textController.selection.start;
-  //         widget.textController.text = widget.textController.text.replaceRange(
-  //           currentCursorPosition,
-  //           currentCursorPosition,
-  //           val,
-  //         );
-  //       }
-  //     }
-  //     if (val == "ஃ") {
-  //       final currentCursorPosition = widget.textController.selection.start;
-  //       widget.textController.text = widget.textController.text.replaceRange(
-  //         currentCursorPosition,
-  //         currentCursorPosition,
-  //         val,
-  //       );
-  //     }
-
-  //     /// Uyir mei eluthu logics
-  //     if (meiEzhuthukal.any((e) => e.contains(val))) {
-  //       if (textStore?.length == 1) {
-  //         textStore?.add(val);
-  //         widget.textController.text += textStore?[1] + textStore?[0];
-  //         textStore = [];
-  //         return;
-  //       } else {
-  //         textStore = [];
-  //         final currentCursorPosition = widget.textController.selection.start;
-  //         widget.textController.text = widget.textController.text.replaceRange(
-  //           currentCursorPosition,
-  //           currentCursorPosition,
-  //           val,
-  //         );
-  //       }
-  //     }
-
-  //     /// Uyir  eluthu logics
-
-  //     if (uyirEzhuthukal.any((e) => e.contains(val))) {
-  //       if (textStore?.length == 1) {
-  //         textStore?.add(val);
-  //         widget.textController.text += textStore?[1] + textStore?[0];
-  //         textStore = [];
-  //         return;
-  //       } else {
-  //         textStore = [];
-  //         final currentCursorPosition = widget.textController.selection.start;
-  //         widget.textController.text = widget.textController.text.replaceRange(
-  //           currentCursorPosition,
-  //           currentCursorPosition,
-  //           val,
-  //         );
-  //       }
-  //     }
-
-  //     if (tamilSymbols.any((e) => e.contains(val))) {
-  //       textStore = [];
-  //       if (val == "ா") {
-  //         if (widget.textController
-  //                     .text[widget.textController.text.length - 1] ==
-  //                 "ெ" ||
-  //             widget.textController
-  //                     .text[widget.textController.text.length - 1] ==
-  //                 "ே") {
-  //           final currentCursorPosition = widget.textController.selection.start;
-  //           widget.textController.text =
-  //               widget.textController.text.replaceRange(
-  //             currentCursorPosition,
-  //             currentCursorPosition,
-  //             val,
-  //           );
-  //         }
-  //       }
-  //       if (val == "ெ" || val == "ே" || val == "ை") {
-
-  //         final currentCursorPosition = widget.textController.selection.start;
-  //         widget.textController.text = widget.textController.text
-  //             .replaceRange(currentCursorPosition, currentCursorPosition, val);
-  //       }
-  //       if (meiEzhuthukal.any((e) => e.contains(widget
-  //           .textController.text[widget.textController.text.length - 1]))) {
-  //         if (val == "ி" ||
-  //             val == "ீ" ||
-  //             val == "ு" ||
-  //             val == "ூ" ||
-  //             val == "ா") {
-  //           final currentCursorPosition = widget.textController.selection.start;
-  //           widget.textController.text =
-  //               widget.textController.text.replaceRange(
-  //             currentCursorPosition,
-  //             currentCursorPosition,
-  //             val,
-  //           );
-  //         }
-  //       }
-  //       if (tamilSymbols.any((e) => e.contains(widget
-  //           .textController.text[widget.textController.text.length - 1]))) {}
-  //     }
-
-  //     final newCursorPosition = currentCursorPosition + val.length;
-
-  //     // Ensure the new cursor position is within the valid range
-  //     final newPosition = TextPosition(
-  //       offset: newCursorPosition.clamp(
-  //         0,
-  //         widget.textController.text.length.toInt(),
-  //       ) as int,
-  //     );
-  //     widget.textController.selection = TextSelection.fromPosition(newPosition);
-
-  //     widget.onKeyPressed(widget.textController.text);
-  //   });
-  // }
-
-// keyPress(val) {
-//   setState(() {
-//     final currentCursorPosition = widget.textController.selection.start;
-
-//     void replaceTextRange(String newText) {
-//       widget.textController.text = widget.textController.text.replaceRange(
-//         currentCursorPosition,
-//         currentCursorPosition,
-//         newText,
-//       );
-//     }
-
-//     String getPreviousCharacter() {
-//       if (currentCursorPosition > 0) {
-//         return widget.textController.text[currentCursorPosition - 1];
-//       }
-//       return '';
-//     }
-
-//     if (val == "்") {
-//       if (meiEzhuthukal.any((e) => e.contains(getPreviousCharacter()))) {
-//         replaceTextRange(val);
-//       }
-//     }
-
-//     if (val == ' ' || val == '\n' || val == 'ஃ' || val == '.') {
-//       replaceTextRange(val);
-//     }
-
-//     if (uyirEzhuthukal.any((e) => e.contains(val))) {
-//       textStore = [];
-//       replaceTextRange(val);
-//     }
-
-//     if (meiEzhuthukal.any((e) => e.contains(val))) {
-//       if (textStore?.length == 1) {
-//         textStore?.add(val);
-//         replaceTextRange('${textStore?[1]}${textStore?[0]}');
-//         textStore = [];
-//         return;
-//       } else {
-//         textStore = [];
-//         replaceTextRange(val);
-//       }
-//     }
-
-//     if (tamilSymbols.any((e) => e.contains(val))) {
-//       textStore = [];
-//       if (val == "ா") {
-//         if (getPreviousCharacter() == "ெ" || getPreviousCharacter() == "ே") {
-//           replaceTextRange(val);
-//         }
-//       }
-//       if (val == "ெ" || val == "ே" || val == "ை") {
-//         textStore = [val];
-//       }
-//       if (val == "ி" || val == "ீ" || val == "ு" || val == "ூ" || val == "ா") {
-//         // Check if the previous element is mei ezhuthu
-//         if (meiEzhuthukal.any((e) => e.contains(getPreviousCharacter()))) {
-//           replaceTextRange(val);
-//         }
-//       }
-//     }
-
-//     final newCursorPosition = currentCursorPosition + val.length;
-
-//     // Ensure the new cursor position is within the valid range
-//     final newPosition = TextPosition(
-//       offset: newCursorPosition.clamp(
-//         0,
-//         widget.textController.text.length.toInt(),
-//       ) as int,
-//     );
-//     widget.textController.selection = TextSelection.fromPosition(newPosition);
-
-//     widget.onKeyPressed(widget.textController.text);
-//   });
-// }
-
-  // keyPress(val) {
-  //   setState(() {
-  //     final currentCursorPosition = widget.textController.selection.start;
-
   //     void replaceTextRange(String newText) {
   //       widget.textController.text = widget.textController.text.replaceRange(
   //         currentCursorPosition,
@@ -361,11 +141,27 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
   //       return '';
   //     }
 
+  //     bool isTamilSymbol(String character) {
+  //       return tamilSymbols.any((e) => e.contains(character));
+  //     }
+
   //     num computeNewCursorPosition() {
-  //       if (tamilSymbols.any((e) => e.contains(val))) {
+  //       if (val == "ெ" || val == "ே" || val == "ை") {
   //         return currentCursorPosition;
   //       }
-  //       return currentCursorPosition + val.length;
+  //       if (!isTamilSymbol(val)) {
+  //         return currentCursorPosition + val.length;
+  //       } else {
+  //         // Check if the previous character is also a Tamil symbol
+
+  //         bool previousIsTamilSymbol = isTamilSymbol(getPreviousCharacter());
+
+  //         // If the previous character is not a Tamil symbol, or if it's the first Tamil symbol in a row, increase cursor position
+  //         if (!previousIsTamilSymbol) {
+  //           return currentCursorPosition + val.length;
+  //         }
+  //       }
+  //       return currentCursorPosition;
   //     }
 
   //     if (val == "்") {
@@ -385,9 +181,18 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
 
   //     if (meiEzhuthukal.any((e) => e.contains(val))) {
   //       if (textStore?.length == 1) {
+  //         // Store the current cursor position before making any changes
+  //         int initialCursorPosition = currentCursorPosition;
+
   //         textStore?.add(val);
   //         replaceTextRange('${textStore?[1]}${textStore?[0]}');
   //         textStore = [];
+
+  //         // Set the cursor position back to the initial position
+  //         final newCursorPosition = TextPosition(offset: initialCursorPosition);
+  //         widget.textController.selection =
+  //             TextSelection.fromPosition(newCursorPosition);
+
   //         return;
   //       } else {
   //         textStore = [];
@@ -395,7 +200,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
   //       }
   //     }
 
-  //     if (tamilSymbols.any((e) => e.contains(val))) {
+  //     if (isTamilSymbol(val)) {
   //       textStore = [];
   //       if (val == "ா") {
   //         if (getPreviousCharacter() == "ெ" || getPreviousCharacter() == "ே") {
@@ -430,6 +235,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
   //     widget.onKeyPressed(widget.textController.text);
   //   });
   // }
+
   keyPress(val) {
     setState(() {
       final currentCursorPosition = widget.textController.selection.start;
@@ -454,17 +260,24 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
       }
 
       num computeNewCursorPosition() {
+        if (val == "ெ" || val == "ே" || val == "ை" || val == "ா") {
+          return currentCursorPosition;
+        }
+
         if (!isTamilSymbol(val)) {
           return currentCursorPosition + val.length;
-        } else {
-          // Check if the previous character is also a Tamil symbol
-          bool previousIsTamilSymbol = isTamilSymbol(getPreviousCharacter());
-
-          // If the previous character is not a Tamil symbol, or if it's the first Tamil symbol in a row, increase cursor position
-          if (!previousIsTamilSymbol) {
-            return currentCursorPosition + val.length;
-          }
         }
+
+        // Check if the previous character is Uyirezhuthu or a Tamil symbol
+        bool previousIsUyirezhuthu =
+            uyirEzhuthukal.any((e) => e.contains(getPreviousCharacter()));
+        bool previousIsTamilSymbol = isTamilSymbol(getPreviousCharacter());
+
+        // If the previous character is neither Uyirezhuthu nor a Tamil symbol, increase cursor position
+        if (!previousIsUyirezhuthu && !previousIsTamilSymbol) {
+          return currentCursorPosition + val.length;
+        }
+
         return currentCursorPosition;
       }
 
@@ -479,15 +292,34 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
       }
 
       if (uyirEzhuthukal.any((e) => e.contains(val))) {
-        textStore = [];
         replaceTextRange(val);
       }
 
       if (meiEzhuthukal.any((e) => e.contains(val))) {
         if (textStore?.length == 1) {
+          // Store the current cursor position before making any changes
+          int initialCursorPosition = currentCursorPosition;
+
+          // Check if the previous character is Uyirezhuthu or a Tamil symbol
+          bool previousIsUyirezhuthu =
+              uyirEzhuthukal.any((e) => e.contains(getPreviousCharacter()));
+          bool previousIsTamilSymbol = isTamilSymbol(getPreviousCharacter());
+
+          // If the previous character is neither Uyirezhuthu nor a Tamil symbol, increase cursor position
+          if (!previousIsUyirezhuthu && !previousIsTamilSymbol) {
+            initialCursorPosition += textStore!.length;
+          }
+
           textStore?.add(val);
           replaceTextRange('${textStore?[1]}${textStore?[0]}');
           textStore = [];
+
+          // Set the cursor position back to the initial position
+          final newCursorPosition =
+              TextPosition(offset: initialCursorPosition + 1);
+          widget.textController.selection =
+              TextSelection.fromPosition(newCursorPosition);
+
           return;
         } else {
           textStore = [];
@@ -518,7 +350,6 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
 
       final newCursorPosition = computeNewCursorPosition();
 
-      // Ensure the new cursor position is within the valid range
       final newPosition = TextPosition(
         offset: newCursorPosition.clamp(
           0,
