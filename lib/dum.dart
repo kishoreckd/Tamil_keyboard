@@ -145,6 +145,149 @@ import 'package:flutter/material.dart';
 
 
 
+
+//* works
+
+  // keyPress(val) {
+  //   setState(() {
+  //     final currentCursorPosition = widget.textController.selection.start;
+
+  //     if (val == ' ' || val == '\n' || val == 'ஃ') {
+  //       widget.textController.text = widget.textController.text
+  //           .replaceRange(currentCursorPosition, currentCursorPosition, val);
+  //     }
+
+  //     // if (uyirEzhuthukal.any((e) => e.contains(val))) {
+  //     //   textStore = [];
+  //     //   widget.textController.text = widget.textController.text
+  //     //       .replaceRange(currentCursorPosition, currentCursorPosition, val);
+  //     // }
+
+  //     // if (uyirEzhuthukal.any((e) => e.contains(val))) {
+  //     //   textStore = [];
+  //     //   final currentCursorPosition = widget.textController.selection.start;
+  //     //   widget.textController.text = widget.textController.text.replaceRange(
+  //     //     currentCursorPosition,
+  //     //     currentCursorPosition,
+  //     //     val,
+  //     //   );
+  //     // }
+  //     if (val == "்") {
+  //       if (meiEzhuthukal.any((e) => e.contains(widget
+  //           .textController.text[widget.textController.text.length - 1]))) {
+  //         final currentCursorPosition = widget.textController.selection.start;
+  //         widget.textController.text = widget.textController.text.replaceRange(
+  //           currentCursorPosition,
+  //           currentCursorPosition,
+  //           val,
+  //         );
+  //       }
+  //     }
+  //     if (val == "ஃ") {
+  //       final currentCursorPosition = widget.textController.selection.start;
+  //       widget.textController.text = widget.textController.text.replaceRange(
+  //         currentCursorPosition,
+  //         currentCursorPosition,
+  //         val,
+  //       );
+  //     }
+
+  //     /// Uyir mei eluthu logics
+  //     if (meiEzhuthukal.any((e) => e.contains(val))) {
+  //       if (textStore?.length == 1) {
+  //         textStore?.add(val);
+  //         widget.textController.text += textStore?[1] + textStore?[0];
+  //         textStore = [];
+  //         return;
+  //       } else {
+  //         textStore = [];
+  //         final currentCursorPosition = widget.textController.selection.start;
+  //         widget.textController.text = widget.textController.text.replaceRange(
+  //           currentCursorPosition,
+  //           currentCursorPosition,
+  //           val,
+  //         );
+  //       }
+  //     }
+
+  //     /// Uyir  eluthu logics
+
+  //     if (uyirEzhuthukal.any((e) => e.contains(val))) {
+  //       if (textStore?.length == 1) {
+  //         textStore?.add(val);
+  //         widget.textController.text += textStore?[1] + textStore?[0];
+  //         textStore = [];
+  //         return;
+  //       } else {
+  //         textStore = [];
+  //         final currentCursorPosition = widget.textController.selection.start;
+  //         widget.textController.text = widget.textController.text.replaceRange(
+  //           currentCursorPosition,
+  //           currentCursorPosition,
+  //           val,
+  //         );
+  //       }
+  //     }
+
+  //     if (tamilSymbols.any((e) => e.contains(val))) {
+  //       textStore = [];
+  //       if (val == "ா") {
+  //         if (widget.textController
+  //                     .text[widget.textController.text.length - 1] ==
+  //                 "ெ" ||
+  //             widget.textController
+  //                     .text[widget.textController.text.length - 1] ==
+  //                 "ே") {
+  //           final currentCursorPosition = widget.textController.selection.start;
+  //           widget.textController.text =
+  //               widget.textController.text.replaceRange(
+  //             currentCursorPosition,
+  //             currentCursorPosition,
+  //             val,
+  //           );
+  //         }
+  //       }
+  //       if (val == "ெ" || val == "ே" || val == "ை") {
+
+  //         final currentCursorPosition = widget.textController.selection.start;
+  //         widget.textController.text = widget.textController.text
+  //             .replaceRange(currentCursorPosition, currentCursorPosition, val);
+  //       }
+  //       if (meiEzhuthukal.any((e) => e.contains(widget
+  //           .textController.text[widget.textController.text.length - 1]))) {
+  //         if (val == "ி" ||
+  //             val == "ீ" ||
+  //             val == "ு" ||
+  //             val == "ூ" ||
+  //             val == "ா") {
+  //           final currentCursorPosition = widget.textController.selection.start;
+  //           widget.textController.text =
+  //               widget.textController.text.replaceRange(
+  //             currentCursorPosition,
+  //             currentCursorPosition,
+  //             val,
+  //           );
+  //         }
+  //       }
+  //       if (tamilSymbols.any((e) => e.contains(widget
+  //           .textController.text[widget.textController.text.length - 1]))) {}
+  //     }
+
+  //     final newCursorPosition = currentCursorPosition + val.length;
+
+  //     // Ensure the new cursor position is within the valid range
+  //     final newPosition = TextPosition(
+  //       offset: newCursorPosition.clamp(
+  //         0,
+  //         widget.textController.text.length.toInt(),
+  //       ) as int,
+  //     );
+  //     widget.textController.selection = TextSelection.fromPosition(newPosition);
+
+  //     widget.onKeyPressed(widget.textController.text);
+  //   });
+  // }
+
 // void main() {
 //   runApp(const NotesUI());
 // }
