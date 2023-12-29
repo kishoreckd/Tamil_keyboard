@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:keyboard_tamil/screens/keyboard.dart';
+import 'package:keyboard_tamil/widgets/Homepage.dart';
+// import 'package:keyboard_tamil/screens/keyboard.dart';
 
 // ignore_for_file: avoid_print
 
@@ -10,6 +11,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MaterialApp(
-    home: TamilKeyboard(),
+    home: MyHomePage(),
   ));
 }
