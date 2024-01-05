@@ -261,7 +261,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
 
       num computeNewCursorPosition() {
         if (val == "ெ" || val == "ே" || val == "ை" || val == "ா") {
-          return currentCursorPosition;
+          return currentCursorPosition + 1;
         }
 
         if (!isTamilSymbol(val)) {
@@ -275,6 +275,11 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
 
         // If the previous character is neither Uyirezhuthu nor a Tamil symbol, increase cursor position
         if (!previousIsUyirezhuthu && !previousIsTamilSymbol) {
+          return currentCursorPosition + val.length;
+        }
+
+        if (meiEzhuthukal.any((e) => e.contains(val))) {
+          // Handle consecutive Meiezhuthu characters
           return currentCursorPosition + val.length;
         }
 
@@ -493,43 +498,47 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final isMobile = screenWidth < 600;
+    final padding = isMobile ? 1.8 : 3.6;
+    final height = isMobile ? 40.0 : MediaQuery.of(context).size.height * 0.055;
+    final width = isMobile ? 36.0 : screenWidth * 0.09;
     return Ink(
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox(
-                width: screenWidth * 0.26,
-                child: Column(
-                  children: [...renderKeyboard()],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: screenWidth * 0.26,
+                  child: Column(
+                    children: [...renderKeyboard()],
+                  ),
                 ),
-              ),
-              SizedBox(
-                width: screenWidth * 0.17,
-                child: Column(
-                  children: [...renderKeyboard2()],
+                SizedBox(
+                  width: screenWidth * 0.17,
+                  child: Column(
+                    children: [...renderKeyboard2()],
+                  ),
                 ),
-              ),
-              SizedBox(
-                width: screenWidth * 0.50,
-                child: Column(
-                  children: [...renderKeyboard3()],
+                SizedBox(
+                  width: screenWidth * 0.50,
+                  child: Column(
+                    children: [...renderKeyboard3()],
+                  ),
                 ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4.0),
-            child: SizedBox(
+              ],
+            ),
+            SizedBox(
               child: Row(
                 children: [
-                  KeyboardKey(label: '?123', onTap: keyPress, value: ''),
-                  KeyboardKey(label: 'ஃ', onTap: keyPress, value: 'ஃ'),
+                  EndKey(label: '?123', onTap: keyPress, value: ''),
+                  EndKey(label: 'ஃ', onTap: keyPress, value: 'ஃ'),
                   Spacebar(label: ' ', onTap: keyPress, value: ' '),
-                  KeyboardKey(label: '்', onTap: keyPress, value: '்'),
-                  // KeyboardKey(label: '.', onTap: keyPress, value: '.'),
-                  KeyboardKey(
+                  EndKey(label: '்', onTap: keyPress, value: '்'),
+                  EndKey(label: '.', onTap: keyPress, value: '.'),
+                  EndKey(
                     label: const Icon(
                       Icons.keyboard_return_sharp,
                       color: Colors.white,
@@ -555,9 +564,12 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
                       );
                     },
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
+                      padding: EdgeInsets.symmetric(
                         vertical: 3,
-                        horizontal: 4,
+                        horizontal: screenWidth > 600
+                            ? screenWidth * 0.01
+                            : screenWidth * 0.005,
+                        // Adjust the padding based on screen width
                       ),
                       child: InkWell(
                         onTap: () {
@@ -570,7 +582,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
                         ),
                         child: Ink(
                           height: 40,
-                          width: 40,
+                          width: width,
                           decoration: BoxDecoration(
                             color: const Color(0xFF313131),
                             borderRadius: BorderRadius.circular(7),
@@ -587,8 +599,8 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
