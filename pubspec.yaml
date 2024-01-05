@@ -40,7 +40,6 @@ dependencies:
   flutter_social_button: ^1.1.4+1
   flutter_svg: ^2.0.9
   firebase_core: ^2.22.0
-  draggable_scrollbar: ^0.1.0
 
 dev_dependencies:
   flutter_test:

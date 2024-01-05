@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:keyboard_tamil/widgets/Homepage.dart';
-import 'package:draggable_scrollbar/draggable_scrollbar.dart';
-import 'package:draggable_scrollbar/draggable_scrollbar.dart';
+
 // import 'package:keyboard_tamil/screens/keyboard.dart';
 
 // ignore_for_file: avoid_print
