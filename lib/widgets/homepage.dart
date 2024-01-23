@@ -236,6 +236,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
   //   });
   // }
 
+ 
   keyPress(val) {
     setState(() {
       final currentCursorPosition = widget.textController.selection.start;
@@ -366,6 +367,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
       widget.onKeyPressed(widget.textController.text);
     });
   }
+
 
   onBackspacePress() {
     setState(() {
