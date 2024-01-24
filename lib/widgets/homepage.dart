@@ -263,8 +263,12 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
       }
 
       num computeNewCursorPosition() {
-        if (val == "ெ" || val == "ே" || val == "ை" || val == "ா") {
-          return currentCursorPosition + 1;
+        bool previousIsUyir =
+            uyirEzhuthukal.any((e) => e.contains(getPreviousCharacter()));
+        if (previousIsUyir) {
+          if (val == "ா") {
+            return currentCursorPosition + 1;
+          }
         }
         if (val == "ெ" || val == "ே" || val == "ை") {
           return currentCursorPosition;
@@ -316,7 +320,9 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
           bool previousIsUyirezhuthu =
               uyirEzhuthukal.any((e) => e.contains(getPreviousCharacter()));
           bool previousIsTamilSymbol = isTamilSymbol(getPreviousCharacter());
-
+          if (previousIsTamilSymbol == true) {
+            previousIsTamilSymbol = !previousIsTamilSymbol;
+          }
           // If the previous character is neither Uyirezhuthu nor a Tamil symbol, increase cursor position
           if (!previousIsUyirezhuthu && !previousIsTamilSymbol) {
             initialCursorPosition += textStore!.length;
@@ -343,6 +349,7 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
         textStore = [];
         if (val == "ா") {
           if (getPreviousCharacter() == "ெ" || getPreviousCharacter() == "ே") {
+            currentCursorPosition + 1;
             replaceTextRange(val);
           }
         }
