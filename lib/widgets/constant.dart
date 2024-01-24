@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 const uyirEzhuthukal = [
   ["அ", "ஆ", "இ"],
@@ -11,7 +12,7 @@ const uyirEzhuthukal = [
   ],
 ];
 const tamilSymbols = [
-  [ "ி", "ீ"],
+  ["ி", "ீ"],
   ["ு", "ூ"],
   ["ெ", "ே"],
   ["ை", "ா"]
@@ -33,3 +34,7 @@ const keys4 = [
   "⏎",
   Icon(Icons.keyboard_backspace)
 ];
+
+final symbolsNameProvider = StateProvider<String?>((ref) {
+  return '';
+});

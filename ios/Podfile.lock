@@ -47,11 +47,11 @@ SPEC CHECKSUMS:
   firebase_core: efc9455611b8769fa90fbdae5da182600bd6901c
   FirebaseCore: 534544dd98cabcf4bf8598d88ec683b02319a528
   FirebaseCoreInternal: 8eb002e564b533bdcf1ba011f33f2b5c10e2ed4a
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   GoogleUtilities: 0759d1a57ebb953965c2dfe0ba4c82e95ccc2e34
   path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
 
-PODFILE CHECKSUM: 6b9eb94e9f98a329f2ef624b852a6e42d090af2b
+PODFILE CHECKSUM: 7be2f5f74864d463a8ad433546ed1de7e0f29aef
 
 COCOAPODS: 1.13.0

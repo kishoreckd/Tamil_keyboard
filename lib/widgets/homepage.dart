@@ -1,17 +1,18 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:keyboard_tamil/widgets/constant.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:keyboard_tamil/widgets/keyboardkey.dart';
+// ignore_for_file: file_names
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends ConsumerStatefulWidget {
   const MyHomePage({super.key});
-
   @override
-  // ignore: library_private_types_in_public_api
-  _MyHomePageState createState() => _MyHomePageState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageState extends ConsumerState<MyHomePage> {
   OverlayEntry? overlayEntry;
   final TextEditingController _textController = TextEditingController();
 
@@ -99,21 +100,21 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class CustomKeyboard extends StatefulWidget {
+class CustomKeyboard extends ConsumerStatefulWidget {
   const CustomKeyboard(
       {super.key, required this.onKeyPressed, required this.textController});
 
   final Function(String) onKeyPressed;
   final TextEditingController textController;
-
   @override
-  State<CustomKeyboard> createState() => _CustomKeyboardState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _CustomKeyboardState();
 }
 
-class _CustomKeyboardState extends State<CustomKeyboard> {
+class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
   late String text;
 
   List? textStore;
+  String? textSt;
 
   Timer? longPressTimer;
 
@@ -236,8 +237,9 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
   //   });
   // }
 
- 
   keyPress(val) {
+    ref.read(symbolsNameProvider.notifier).state = '';
+
     setState(() {
       final currentCursorPosition = widget.textController.selection.start;
 
@@ -298,6 +300,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
       }
 
       if (uyirEzhuthukal.any((e) => e.contains(val))) {
+        textStore = [];
         replaceTextRange(val);
       }
 
@@ -319,7 +322,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
           textStore?.add(val);
           replaceTextRange('${textStore?[1]}${textStore?[0]}');
           textStore = [];
-
+          ref.read(symbolsNameProvider.notifier).state = '';
           // Set the cursor position back to the initial position
           final newCursorPosition =
               TextPosition(offset: initialCursorPosition + 1);
@@ -342,6 +345,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
         }
         if (val == "ெ" || val == "ே" || val == "ை") {
           textStore = [val];
+          ref.read(symbolsNameProvider.notifier).state = val;
         }
         if (val == "ி" ||
             val == "ீ" ||
@@ -368,8 +372,9 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
     });
   }
 
-
   onBackspacePress() {
+    SystemSound.play(SystemSoundType.click);
+
     setState(() {
       if (widget.textController.text.isNotEmpty) {
         final currentSelection = widget.textController.selection;
@@ -449,7 +454,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
           (x) => Row(
             children: x.map((y) {
               return Expanded(
-                child: KeyboardKey(
+                child: KeyboardKeys(
                   label: y,
                   onTap: keyPress,
                   value: y,
@@ -467,7 +472,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
           (x) => Row(
             children: x.map((y) {
               return Expanded(
-                child: KeyboardKey(
+                child: SymbolsKeyboardKey(
                   label: y,
                   onTap: keyPress,
                   value: y,
@@ -485,7 +490,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
           (x) => Row(
             children: x.map((y) {
               return Expanded(
-                child: KeyboardKey(
+                child: KeyboardKeys(
                   label: y,
                   onTap: keyPress,
                   value: y,
@@ -501,8 +506,8 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final isMobile = screenWidth < 600;
-    final padding = isMobile ? 1.8 : 3.6;
-    final height = isMobile ? 40.0 : MediaQuery.of(context).size.height * 0.055;
+    // final padding = isMobile ? 1.8 : 3.6;
+    // final height = isMobile ? 40.0 : MediaQuery.of(context).size.height * 0.055;
     final width = isMobile ? 36.0 : screenWidth * 0.09;
     return Ink(
       child: Padding(
@@ -574,6 +579,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
                         // Adjust the padding based on screen width
                       ),
                       child: InkWell(
+                        splashColor: Color.fromARGB(255, 120, 120, 120),
                         onTap: () {
                           setState(() {
                             onBackspacePress();
