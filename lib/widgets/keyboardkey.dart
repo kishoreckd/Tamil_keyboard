@@ -27,7 +27,8 @@ class _KeyboardKeyState extends ConsumerState<KeyboardKeys> {
       return Center(
         child: Text(
           widget.label,
-          style: const TextStyle(fontSize: 14.0, color: Colors.white),
+          style: const TextStyle(
+              fontSize: 15.0, color: Colors.white, fontWeight: FontWeight.w600),
           textAlign: TextAlign.center,
         ),
       );
@@ -41,9 +42,12 @@ class _KeyboardKeyState extends ConsumerState<KeyboardKeys> {
     final screenWidth = MediaQuery.of(context).size.width;
     final isMobile = screenWidth < 600;
     final padding = isMobile ? 1.8 : 3.6;
-    final height = isMobile ? 40.0 : MediaQuery.of(context).size.height * 0.055;
-    final width = isMobile ? 40.0 : screenWidth * 0.09;
-
+    // final height = isMobile ? 40.0 : MediaQuery.of(context).size.height * 0.055;
+    // final width = isMobile ? 40.0 : screenWidth * 0.09;
+    final height = 40.0;
+    final width = 40.0;
+    final bool isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     return Column(
       children: [
         Padding(
@@ -123,8 +127,10 @@ class _SymbolsKeyboardKeyState extends ConsumerState<SymbolsKeyboardKey> {
     final screenWidth = MediaQuery.of(context).size.width;
     final isMobile = screenWidth < 600;
     final padding = isMobile ? 1.8 : 3.6;
-    final height = isMobile ? 40.0 : MediaQuery.of(context).size.height * 0.055;
-    final width = isMobile ? 40.0 : screenWidth * 0.09;
+    // final height = isMobile ? 40.0 : MediaQuery.of(context).size.height * 0.055;
+    // final width = isMobile ? 40.0 : screenWidth * 0.09;
+    final height = 40.0;
+    final width = 40.0;
 
     isInTextStore = symbols == widget.value;
 
@@ -158,9 +164,9 @@ class _SymbolsKeyboardKeyState extends ConsumerState<SymbolsKeyboardKey> {
                 child: Text(
                   widget.label,
                   style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: 16.0,
                     fontWeight:
-                        isInTextStore ? FontWeight.w600 : FontWeight.w400,
+                        isInTextStore ? FontWeight.w800 : FontWeight.w600,
                     color: Colors.white, // Change color conditionally
                   ),
                   textAlign: TextAlign.center,

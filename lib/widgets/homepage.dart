@@ -266,6 +266,9 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
         if (val == "ெ" || val == "ே" || val == "ை" || val == "ா") {
           return currentCursorPosition + 1;
         }
+        if (val == "ெ" || val == "ே" || val == "ை") {
+          return currentCursorPosition;
+        }
 
         if (!isTamilSymbol(val)) {
           return currentCursorPosition + val.length;
