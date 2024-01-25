@@ -263,13 +263,19 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
       }
 
       num computeNewCursorPosition() {
-        bool previousIsUyir =
+        bool previousIsMei =
+            meiEzhuthukal.any((e) => e.contains(getPreviousCharacter()));
+        // Check if the previous character is Uyirezhuthu or a Tamil symbol
+        bool previousIsUyirezhuthu =
             uyirEzhuthukal.any((e) => e.contains(getPreviousCharacter()));
-        if (previousIsUyir) {
-          if (val == "ா") {
+        bool previousIsTamilSymbol = isTamilSymbol(getPreviousCharacter());
+        if (val == "ா") {
+          if (previousIsMei ||
+              previousIsTamilSymbol && getPreviousCharacter() != "ா") {
             return currentCursorPosition + 1;
           }
         }
+
         if (val == "ெ" || val == "ே" || val == "ை") {
           return currentCursorPosition;
         }
@@ -277,11 +283,6 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
         if (!isTamilSymbol(val)) {
           return currentCursorPosition + val.length;
         }
-
-        // Check if the previous character is Uyirezhuthu or a Tamil symbol
-        bool previousIsUyirezhuthu =
-            uyirEzhuthukal.any((e) => e.contains(getPreviousCharacter()));
-        bool previousIsTamilSymbol = isTamilSymbol(getPreviousCharacter());
 
         // If the previous character is neither Uyirezhuthu nor a Tamil symbol, increase cursor position
         if (!previousIsUyirezhuthu && !previousIsTamilSymbol) {
@@ -297,7 +298,8 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
       }
 
       if (val == "்") {
-        if (meiEzhuthukal.any((e) => e.contains(getPreviousCharacter()))) {
+        if (meiEzhuthukal.any((e) => e.contains(getPreviousCharacter())) &&
+            getPreviousCharacter() != "்") {
           replaceTextRange(val);
         }
       }
@@ -338,6 +340,15 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
           widget.textController.selection =
               TextSelection.fromPosition(newCursorPosition);
 
+          if (previousIsUyirezhuthu) {
+            // If the previous letter is Uyirezhuthu, adjust the cursor position
+            widget.textController.selection = TextSelection.fromPosition(
+                TextPosition(offset: newCursorPosition.offset + 1));
+          } else {
+            widget.textController.selection =
+                TextSelection.fromPosition(newCursorPosition);
+          }
+
           return;
         } else {
           textStore = [];
@@ -348,7 +359,8 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
       if (isTamilSymbol(val)) {
         textStore = [];
         if (val == "ா") {
-          if (getPreviousCharacter() == "ெ" || getPreviousCharacter() == "ே") {
+          if (getPreviousCharacter() == "ெ" ||
+              getPreviousCharacter() == "ே" && getPreviousCharacter() != "ா") {
             currentCursorPosition + 1;
             replaceTextRange(val);
           }
