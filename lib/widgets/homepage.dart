@@ -18,9 +18,46 @@ class _HomePageState extends ConsumerState<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color(0XFF080808),
+      drawer: Container(
+        height: double.infinity,
+        color: Colors.white,
+        width: screenWidth * 0.75,
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: Column(children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Icon(
+                              Icons.close,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                   
+                  ]),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: const Color(0XFF080808),
@@ -601,7 +638,7 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
                         // Adjust the padding based on screen width
                       ),
                       child: InkWell(
-                        splashColor: Color.fromARGB(255, 120, 120, 120),
+                        splashColor: const Color.fromARGB(255, 120, 120, 120),
                         onTap: () {
                           setState(() {
                             onBackspacePress();
