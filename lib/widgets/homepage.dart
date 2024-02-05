@@ -1,9 +1,14 @@
 import 'dart:async';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:keyboard_tamil/widgets/constant.dart';
+import 'package:flutter/material.dart';
+import '../constant/webviewscreen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:keyboard_tamil/constant/svgicons.dart';
+import 'package:keyboard_tamil/widgets/helpscreen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:keyboard_tamil/widgets/keyboardkey.dart';
+import 'package:keyboard_tamil/constant/constant_keys.dart';
+
 // ignore_for_file: file_names
 
 class MyHomePage extends ConsumerStatefulWidget {
@@ -23,48 +28,34 @@ class _HomePageState extends ConsumerState<MyHomePage> {
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color(0XFF080808),
-      drawer: Container(
-        height: double.infinity,
-        color: Colors.white,
-        width: screenWidth * 0.75,
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              children: <Widget>[
-                Expanded(
-                  child: Column(children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Icon(
-                              Icons.close,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                   
-                  ]),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
       appBar: AppBar(
-        centerTitle: true,
         backgroundColor: const Color(0XFF080808),
         title: const Text(
           'தமிழ் விசைப்பலகை',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
         ),
+        actions: [
+          IconButton(
+            icon: SvgPicture.string(feedbackIcon),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const WebViewScreen(
+                    name: 'Feedback',
+                    url:
+                        'https://docs.google.com/forms/d/e/1FAIpQLSfXX2weStTmlXkzO8Iwi3vr4MgIK8-eGBmQCSzztbZle3SiXg/viewform?usp=sf_link'),
+              ));
+            },
+          ),
+          IconButton(
+            icon: SvgPicture.string(helpIcon),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) =>
+                    const HelpScreen(), // Replace with your HelpScreen widget
+              ));
+            },
+          ),
+        ],
       ),
       body: Builder(
         builder: (BuildContext context) {
@@ -94,10 +85,19 @@ class _HomePageState extends ConsumerState<MyHomePage> {
                       keyboardType: TextInputType.multiline,
                       controller: _textController,
                       onTap: () {
-                        _showCustomKeyboard(context);
                       },
                     ),
                   ),
+                ),
+              ),
+              Ink(
+                decoration: const BoxDecoration(color: Color(0XFF202020)),
+                child: CustomKeyboard(
+                  onKeyPressed: (String value) {
+                    // Handle key presses
+                  },
+                  textController:
+                      _textController, 
                 ),
               ),
             ],
@@ -118,9 +118,8 @@ class _HomePageState extends ConsumerState<MyHomePage> {
             decoration: const BoxDecoration(color: Color(0XFF202020)),
             child: CustomKeyboard(
               onKeyPressed: (String value) {
-                // Handle key presses
               },
-              textController: _textController, // Use the TextEditingController
+              textController: _textController,
             ),
           ),
         ),
@@ -190,11 +189,9 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
   //       if (!isTamilSymbol(val)) {
   //         return currentCursorPosition + val.length;
   //       } else {
-  //         // Check if the previous character is also a Tamil symbol
 
   //         bool previousIsTamilSymbol = isTamilSymbol(getPreviousCharacter());
 
-  //         // If the previous character is not a Tamil symbol, or if it's the first Tamil symbol in a row, increase cursor position
   //         if (!previousIsTamilSymbol) {
   //           return currentCursorPosition + val.length;
   //         }

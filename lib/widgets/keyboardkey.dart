@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:keyboard_tamil/widgets/constant.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:keyboard_tamil/constant/constant_keys.dart';
 // ignore_for_file: unused_local_variable
 
 class KeyboardKeys extends ConsumerStatefulWidget {
