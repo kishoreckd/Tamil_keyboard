@@ -42,7 +42,7 @@ class _HomePageState extends ConsumerState<MyHomePage> {
                 builder: (context) => const WebViewScreen(
                     name: 'Feedback',
                     url:
-                        'https://docs.google.com/forms/d/e/1FAIpQLSfXX2weStTmlXkzO8Iwi3vr4MgIK8-eGBmQCSzztbZle3SiXg/viewform?usp=sf_link'),
+                        'https://docs.google.com/forms/d/e/1FAIpQLSfXX2weStTmlXkzO8Iwi3vr4MgIK8-eGBmQCSzztbZle3SiXg/viewform'),
               ));
             },
           ),
@@ -60,6 +60,7 @@ class _HomePageState extends ConsumerState<MyHomePage> {
       body: Builder(
         builder: (BuildContext context) {
           return Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -84,8 +85,7 @@ class _HomePageState extends ConsumerState<MyHomePage> {
                       maxLines: null,
                       keyboardType: TextInputType.multiline,
                       controller: _textController,
-                      onTap: () {
-                      },
+                      onTap: () {},
                     ),
                   ),
                 ),
@@ -96,8 +96,7 @@ class _HomePageState extends ConsumerState<MyHomePage> {
                   onKeyPressed: (String value) {
                     // Handle key presses
                   },
-                  textController:
-                      _textController, 
+                  textController: _textController,
                 ),
               ),
             ],
@@ -117,8 +116,7 @@ class _HomePageState extends ConsumerState<MyHomePage> {
           child: Ink(
             decoration: const BoxDecoration(color: Color(0XFF202020)),
             child: CustomKeyboard(
-              onKeyPressed: (String value) {
-              },
+              onKeyPressed: (String value) {},
               textController: _textController,
             ),
           ),

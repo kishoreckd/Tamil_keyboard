@@ -30,7 +30,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
       body: Stack(children: [
         InAppWebView(
           initialUrlRequest: URLRequest(url: Uri.parse(widget.url)),
-          onLoadError: (controller, url, code, message) {},
+          onLoadError: (controller, url, code, message) {
+          },
           onLoadStart: (controller, url) {
             setState(() {
               isLoading = true;
@@ -43,10 +44,9 @@ class _WebViewScreenState extends State<WebViewScreen> {
           },
         ),
         if (isLoading)
-          const Center(
-            child:
-                CircularProgressIndicator(), // Replace with your desired loader icon
-          ),
+         Center(
+          child: CircularProgressIndicator(),
+         )
       ]),
     );
   }
