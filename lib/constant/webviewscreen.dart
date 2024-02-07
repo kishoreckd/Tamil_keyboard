@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+// ignore_for_file: unused_local_variable
+
 
 class WebViewScreen extends StatefulWidget {
   final String url;

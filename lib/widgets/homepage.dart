@@ -8,7 +8,8 @@ import 'package:keyboard_tamil/widgets/helpscreen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:keyboard_tamil/widgets/keyboardkey.dart';
 import 'package:keyboard_tamil/constant/constant_keys.dart';
-
+// ignore_for_file: unused_element
+// ignore_for_file: unused_local_variable
 // ignore_for_file: file_names
 
 class MyHomePage extends ConsumerStatefulWidget {
@@ -157,117 +158,6 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
     super.initState();
     text = '';
   }
-
-  // keyPress(val) {
-  //   setState(() {
-  //     final currentCursorPosition = widget.textController.selection.start;
-  //     void replaceTextRange(String newText) {
-  //       widget.textController.text = widget.textController.text.replaceRange(
-  //         currentCursorPosition,
-  //         currentCursorPosition,
-  //         newText,
-  //       );
-  //     }
-
-  //     String getPreviousCharacter() {
-  //       if (currentCursorPosition > 0) {
-  //         return widget.textController.text[currentCursorPosition - 1];
-  //       }
-  //       return '';
-  //     }
-
-  //     bool isTamilSymbol(String character) {
-  //       return tamilSymbols.any((e) => e.contains(character));
-  //     }
-
-  //     num computeNewCursorPosition() {
-  //       if (val == "ெ" || val == "ே" || val == "ை") {
-  //         return currentCursorPosition;
-  //       }
-  //       if (!isTamilSymbol(val)) {
-  //         return currentCursorPosition + val.length;
-  //       } else {
-
-  //         bool previousIsTamilSymbol = isTamilSymbol(getPreviousCharacter());
-
-  //         if (!previousIsTamilSymbol) {
-  //           return currentCursorPosition + val.length;
-  //         }
-  //       }
-  //       return currentCursorPosition;
-  //     }
-
-  //     if (val == "்") {
-  //       if (meiEzhuthukal.any((e) => e.contains(getPreviousCharacter()))) {
-  //         replaceTextRange(val);
-  //       }
-  //     }
-
-  //     if (val == ' ' || val == '\n' || val == 'ஃ' || val == '.') {
-  //       replaceTextRange(val);
-  //     }
-
-  //     if (uyirEzhuthukal.any((e) => e.contains(val))) {
-  //       textStore = [];
-  //       replaceTextRange(val);
-  //     }
-
-  //     if (meiEzhuthukal.any((e) => e.contains(val))) {
-  //       if (textStore?.length == 1) {
-  //         // Store the current cursor position before making any changes
-  //         int initialCursorPosition = currentCursorPosition;
-
-  //         textStore?.add(val);
-  //         replaceTextRange('${textStore?[1]}${textStore?[0]}');
-  //         textStore = [];
-
-  //         // Set the cursor position back to the initial position
-  //         final newCursorPosition = TextPosition(offset: initialCursorPosition);
-  //         widget.textController.selection =
-  //             TextSelection.fromPosition(newCursorPosition);
-
-  //         return;
-  //       } else {
-  //         textStore = [];
-  //         replaceTextRange(val);
-  //       }
-  //     }
-
-  //     if (isTamilSymbol(val)) {
-  //       textStore = [];
-  //       if (val == "ா") {
-  //         if (getPreviousCharacter() == "ெ" || getPreviousCharacter() == "ே") {
-  //           replaceTextRange(val);
-  //         }
-  //       }
-  //       if (val == "ெ" || val == "ே" || val == "ை") {
-  //         textStore = [val];
-  //       }
-  //       if (val == "ி" ||
-  //           val == "ீ" ||
-  //           val == "ு" ||
-  //           val == "ூ" ||
-  //           val == "ா") {
-  //         if (meiEzhuthukal.any((e) => e.contains(getPreviousCharacter()))) {
-  //           replaceTextRange(val);
-  //         }
-  //       }
-  //     }
-
-  //     final newCursorPosition = computeNewCursorPosition();
-
-  //     // Ensure the new cursor position is within the valid range
-  //     final newPosition = TextPosition(
-  //       offset: newCursorPosition.clamp(
-  //         0,
-  //         widget.textController.text.length.toInt(),
-  //       ) as int,
-  //     );
-  //     widget.textController.selection = TextSelection.fromPosition(newPosition);
-
-  //     widget.onKeyPressed(widget.textController.text);
-  //   });
-  // }
 
   keyPress(val) {
     ref.read(symbolsNameProvider.notifier).state = '';
