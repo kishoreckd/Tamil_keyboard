@@ -33,8 +33,12 @@ class _HomePageState extends ConsumerState<MyHomePage> {
         backgroundColor: const Color(0XFF080808),
         title: const Text(
           'தமிழ் விசைப்பலகை',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+          ),
         ),
+        centerTitle: false,
         actions: [
           IconButton(
             icon: SvgPicture.string(feedbackIcon),
@@ -47,15 +51,15 @@ class _HomePageState extends ConsumerState<MyHomePage> {
               ));
             },
           ),
-          IconButton(
-            icon: SvgPicture.string(helpIcon),
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) =>
-                    const HelpScreen(), // Replace with your HelpScreen widget
-              ));
-            },
-          ),
+          // IconButton(
+          //   icon: SvgPicture.string(helpIcon),
+          //   onPressed: () {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //       builder: (context) =>
+          //           const HelpScreen(), // Replace with your HelpScreen widget
+          //     ));
+          //   },
+          // ),
         ],
       ),
       body: Builder(
@@ -484,8 +488,8 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
             SizedBox(
               child: Row(
                 children: [
-                  EndKey(label: '?123', onTap: keyPress, value: ''),
                   EndKey(label: 'ஃ', onTap: keyPress, value: 'ஃ'),
+                  EndKey(label: ',', onTap: keyPress, value: ','),
                   Spacebar(label: ' ', onTap: keyPress, value: ' '),
                   EndKey(label: '்', onTap: keyPress, value: '்'),
                   EndKey(label: '.', onTap: keyPress, value: '.'),
