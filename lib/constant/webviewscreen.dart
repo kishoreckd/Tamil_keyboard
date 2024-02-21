@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 // ignore_for_file: unused_local_variable
 
-
 class WebViewScreen extends StatefulWidget {
   final String url;
   final String name;
@@ -24,9 +23,9 @@ class _WebViewScreenState extends State<WebViewScreen> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0XFFE9ECF1),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0XFFE9ECF1),
         title: Text(widget.name),
       ),
       body: Stack(children: [

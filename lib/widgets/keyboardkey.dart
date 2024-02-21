@@ -8,12 +8,14 @@ class KeyboardKeys extends ConsumerStatefulWidget {
   final dynamic label;
   final dynamic value;
   final ValueSetter<dynamic> onTap;
+  final bool isdarkmode;
 
   const KeyboardKeys({
     super.key,
     @required this.label,
     required this.onTap,
     @required this.value,
+    required this.isdarkmode,
   })  : assert(label != null),
         assert(value != null);
 
@@ -27,8 +29,13 @@ class _KeyboardKeyState extends ConsumerState<KeyboardKeys> {
       return Center(
         child: Text(
           widget.label,
-          style: const TextStyle(
-              fontSize: 14.0, color: Colors.white, fontWeight: FontWeight.w600),
+          style: TextStyle(
+            fontSize: 14.0,
+            color: widget.isdarkmode
+                ? const Color(0XFFE9ECF1)
+                : const Color(0XFF534D73),
+            fontWeight: FontWeight.w600,
+          ),
           textAlign: TextAlign.center,
         ),
       );
@@ -56,7 +63,7 @@ class _KeyboardKeyState extends ConsumerState<KeyboardKeys> {
             horizontal: padding,
           ),
           child: InkWell(
-            splashColor: const Color.fromARGB(255, 120, 120, 120),
+            splashColor:widget.isdarkmode? const Color.fromARGB(255, 120, 120, 120):Color.fromARGB(255, 131, 196, 224),
             customBorder: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
             ),
@@ -68,7 +75,9 @@ class _KeyboardKeyState extends ConsumerState<KeyboardKeys> {
               height: height,
               width: width,
               decoration: BoxDecoration(
-                color: const Color(0xFF313131),
+                color: widget.isdarkmode
+                    ? const Color(0xFF313131)
+                    : const Color(0XFFFFFFFF),
                 borderRadius: BorderRadius.circular(7),
               ),
               child: renderLabel(),
@@ -84,12 +93,14 @@ class SymbolsKeyboardKey extends ConsumerStatefulWidget {
   final dynamic label;
   final dynamic value;
   final ValueSetter<dynamic> onTap;
+  final bool isdarkmode;
 
   const SymbolsKeyboardKey({
     super.key,
     @required this.label,
     required this.onTap,
     @required this.value,
+    required this.isdarkmode,
   })  : assert(label != null),
         assert(value != null);
 
@@ -110,7 +121,7 @@ class _SymbolsKeyboardKeyState extends ConsumerState<SymbolsKeyboardKey> {
   //           fontSize: 14.0,
   //           color: isInTextStore
   //               ? Colors.red
-  //               : Colors.white, // Change color conditionally
+  //               : Color(0XFFE9ECF1), // Change color conditionally
   //         ),
   //         textAlign: TextAlign.center,
   //       ),
@@ -142,7 +153,9 @@ class _SymbolsKeyboardKeyState extends ConsumerState<SymbolsKeyboardKey> {
             horizontal: padding,
           ),
           child: InkWell(
-            splashColor: const Color.fromARGB(255, 120, 120, 120),
+            splashColor: widget.isdarkmode
+                ? const Color.fromARGB(255, 120, 120, 120)
+                : const Color(0XFF009DE0),
             customBorder: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
             ),
@@ -156,8 +169,12 @@ class _SymbolsKeyboardKeyState extends ConsumerState<SymbolsKeyboardKey> {
               width: width,
               decoration: BoxDecoration(
                 color: isInTextStore
-                    ? const Color.fromARGB(255, 120, 120, 120)
-                    : const Color(0xFF313131),
+                    ? widget.isdarkmode
+                        ? const Color.fromARGB(255, 120, 120, 120)
+                        : const Color(0XFF009DE0)
+                    : widget.isdarkmode
+                        ? const Color(0xFF313131)
+                        : const Color(0XFFFFFFFF),
                 borderRadius: BorderRadius.circular(7),
               ),
               child: Center(
@@ -167,7 +184,9 @@ class _SymbolsKeyboardKeyState extends ConsumerState<SymbolsKeyboardKey> {
                     fontSize: 14.0,
                     fontWeight:
                         isInTextStore ? FontWeight.w800 : FontWeight.w600,
-                    color: Colors.white, // Change color conditionally
+                    color: widget.isdarkmode
+                        ? const Color(0XFFE9ECF1)
+                        : const Color(0XFF534D73),
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -184,12 +203,14 @@ class EndKey extends ConsumerStatefulWidget {
   final dynamic label;
   final dynamic value;
   final ValueSetter<dynamic> onTap;
+  final bool isdarkmode;
 
   const EndKey({
     super.key,
     @required this.label,
     required this.onTap,
     @required this.value,
+    required this.isdarkmode,
   })  : assert(label != null),
         assert(value != null);
   @override
@@ -202,7 +223,12 @@ class _EndKeyState extends ConsumerState<EndKey> {
       return Center(
         child: Text(
           widget.label,
-          style: const TextStyle(fontSize: 14.0, color: Colors.white),
+          style: TextStyle(
+            fontSize: 14.0,
+            color: widget.isdarkmode
+                ? const Color(0XFFE9ECF1)
+                : const Color(0XFF534D73),
+          ),
           textAlign: TextAlign.center,
         ),
       );
@@ -228,7 +254,7 @@ class _EndKeyState extends ConsumerState<EndKey> {
             // Adjust the padding based on screen width
           ),
           child: InkWell(
-            splashColor: const Color.fromARGB(255, 120, 120, 120),
+            splashColor:widget.isdarkmode? const Color.fromARGB(255, 120, 120, 120):Color.fromARGB(255, 131, 196, 224),
             customBorder: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
             ),
@@ -240,7 +266,9 @@ class _EndKeyState extends ConsumerState<EndKey> {
               height: 40,
               width: width,
               decoration: BoxDecoration(
-                color: const Color(0xFF313131),
+                color: widget.isdarkmode
+                    ? const Color(0xFF313131)
+                    : const Color(0XFFFFFFFF),
                 borderRadius: BorderRadius.circular(7),
               ),
               child: renderLabel(),
@@ -256,13 +284,15 @@ class Spacebar extends ConsumerStatefulWidget {
   final dynamic label;
   final dynamic value;
   final ValueSetter<dynamic> onTap;
+  final bool isdarkmode;
 
-  const Spacebar({
-    super.key,
-    @required this.label,
-    required this.onTap,
-    @required this.value,
-  })  : assert(label != null),
+  const Spacebar(
+      {super.key,
+      @required this.label,
+      required this.onTap,
+      @required this.value,
+      required this.isdarkmode})
+      : assert(label != null),
         assert(value != null);
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _SpacebarState();
@@ -275,14 +305,14 @@ class _SpacebarState extends ConsumerState<Spacebar> {
     final screenWidth = MediaQuery.of(context).size.width;
     final isMobile = screenWidth < 600;
     final height = isMobile ? 40.0 : screenHeight * 0.11;
-    final width = isMobile ? screenWidth * 0.304 : screenWidth * 0.305;
+    // final width = isMobile ? screenWidth * 0.307 : screenWidth * 0.305;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 3.0),
       child: Column(
         children: [
           InkWell(
-            splashColor: const Color.fromARGB(255, 120, 120, 120),
+            splashColor:widget.isdarkmode? const Color.fromARGB(255, 120, 120, 120):Color.fromARGB(255, 131, 196, 224),
             customBorder: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
             ),
@@ -292,15 +322,18 @@ class _SpacebarState extends ConsumerState<Spacebar> {
             },
             child: Ink(
               height: height,
-              width: width,
+              width: screenWidth * 0.305,
               decoration: BoxDecoration(
-                color: const Color(0xFF313131),
+                color: widget.isdarkmode
+                    ? const Color(0xFF313131)
+                    : const Color(0XFFFFFFFF),
                 borderRadius: BorderRadius.circular(7),
               ),
               child: Center(
                 child: Text(
                   widget.label,
-                  style: const TextStyle(fontSize: 14.0, color: Colors.white),
+                  style:
+                      const TextStyle(fontSize: 14.0, color: Color(0XFFE9ECF1)),
                   textAlign: TextAlign.center,
                 ),
               ),

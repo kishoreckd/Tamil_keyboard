@@ -10,13 +10,14 @@ class HelpScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0XFF080808),
       appBar: AppBar(
-        iconTheme:
-            const IconThemeData(color: Colors.white), // Set the back icon color
+        iconTheme: const IconThemeData(
+            color: Color(0XFFE9ECF1)), // Set the back icon color
 
         backgroundColor: const Color(0XFF080808),
         title: const Text(
           'உதவி',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+          style:
+              TextStyle(color: Color(0XFFE9ECF1), fontWeight: FontWeight.w600),
         ),
       ),
       body: Column(
@@ -26,13 +27,15 @@ class HelpScreen extends StatelessWidget {
               Text(
                 'தமிழ் விசைப்பலகை',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0XFFE9ECF1),
                     fontSize: 25,
                     fontWeight: FontWeight.w600),
               )
             ],
           ),
-          const SizedBox(height: 100,),
+          const SizedBox(
+            height: 100,
+          ),
           CarouselSlider.builder(
             itemCount: 3,
             itemBuilder: (BuildContext context, int index, int realIndex) {
@@ -49,7 +52,8 @@ class HelpScreen extends StatelessWidget {
                       Text(
                         'தமிழில் எளிதாக தட்டச்சு செய்யலாம்',
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w600),
+                            color: Color(0XFFE9ECF1),
+                            fontWeight: FontWeight.w600),
                       ),
                       // const Text(
                       //   'முதலில் த வை அழுத்தவும் பிறகு ஒலி தட்டச்சு செய்யவும் ',
