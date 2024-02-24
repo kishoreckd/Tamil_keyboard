@@ -1,0 +1,12 @@
+dev.fluttercommunity.plus.packageinfo.package_info_plus-core-1.6.0-0 /Users/rhino/.gradle/caches/transforms-3/55bcb5de5f3e83fcdc57239c67e2a357/transformed/core-1.6.0/res
+dev.fluttercommunity.plus.packageinfo.package_info_plus-jetified-window-java-1.0.0-beta04-1 /Users/rhino/.gradle/caches/transforms-3/981afee23352a7ed07a7f22c39d8b412/transformed/jetified-window-java-1.0.0-beta04/res
+dev.fluttercommunity.plus.packageinfo.package_info_plus-jetified-window-1.0.0-beta04-2 /Users/rhino/.gradle/caches/transforms-3/debfbf90a2465fdd6e98dc208301c729/transformed/jetified-window-1.0.0-beta04/res
+dev.fluttercommunity.plus.packageinfo.package_info_plus-jetified-annotation-experimental-1.1.0-3 /Users/rhino/.gradle/caches/transforms-3/fdb00f16c339871e988c28b1c0df6b67/transformed/jetified-annotation-experimental-1.1.0/res
+dev.fluttercommunity.plus.packageinfo.package_info_plus-main-4 /Users/rhino/.pub-cache/hosted/pub.dev/package_info_plus-5.0.1/android/src/main/res
+dev.fluttercommunity.plus.packageinfo.package_info_plus-release-5 /Users/rhino/.pub-cache/hosted/pub.dev/package_info_plus-5.0.1/android/src/release/res
+dev.fluttercommunity.plus.packageinfo.package_info_plus-pngs-6 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/package_info_plus/generated/res/pngs/release
+dev.fluttercommunity.plus.packageinfo.package_info_plus-resValues-7 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/package_info_plus/generated/res/resValues/release
+dev.fluttercommunity.plus.packageinfo.package_info_plus-rs-8 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/package_info_plus/generated/res/rs/release
+dev.fluttercommunity.plus.packageinfo.package_info_plus-mergeReleaseResources-9 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/package_info_plus/intermediates/incremental/release/mergeReleaseResources/merged.dir
+dev.fluttercommunity.plus.packageinfo.package_info_plus-mergeReleaseResources-10 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/package_info_plus/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+dev.fluttercommunity.plus.packageinfo.package_info_plus-merged_res-11 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/package_info_plus/intermediates/merged_res/release

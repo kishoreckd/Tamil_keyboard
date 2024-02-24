@@ -1,0 +1,14 @@
+io.flutter.plugins.videoplayer.video_player_android-jetified-window-java-1.0.0-beta04-0 /Users/rhino/.gradle/caches/transforms-3/981afee23352a7ed07a7f22c39d8b412/transformed/jetified-window-java-1.0.0-beta04/res
+io.flutter.plugins.videoplayer.video_player_android-jetified-exoplayer-core-2.18.7-1 /Users/rhino/.gradle/caches/transforms-3/9b33f938b2f281513fc216281f49dd95/transformed/jetified-exoplayer-core-2.18.7/res
+io.flutter.plugins.videoplayer.video_player_android-lifecycle-runtime-2.3.1-2 /Users/rhino/.gradle/caches/transforms-3/ad3508da65e735d3e6a24b0ad98ecf2e/transformed/lifecycle-runtime-2.3.1/res
+io.flutter.plugins.videoplayer.video_player_android-jetified-window-1.0.0-beta04-3 /Users/rhino/.gradle/caches/transforms-3/debfbf90a2465fdd6e98dc208301c729/transformed/jetified-window-1.0.0-beta04/res
+io.flutter.plugins.videoplayer.video_player_android-core-1.7.0-4 /Users/rhino/.gradle/caches/transforms-3/f5e9b62c394a92489fdff1750ac31596/transformed/core-1.7.0/res
+io.flutter.plugins.videoplayer.video_player_android-jetified-annotation-experimental-1.1.0-5 /Users/rhino/.gradle/caches/transforms-3/fdb00f16c339871e988c28b1c0df6b67/transformed/jetified-annotation-experimental-1.1.0/res
+io.flutter.plugins.videoplayer.video_player_android-main-6 /Users/rhino/.pub-cache/hosted/pub.dev/video_player_android-2.4.11/android/src/main/res
+io.flutter.plugins.videoplayer.video_player_android-release-7 /Users/rhino/.pub-cache/hosted/pub.dev/video_player_android-2.4.11/android/src/release/res
+io.flutter.plugins.videoplayer.video_player_android-pngs-8 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/video_player_android/generated/res/pngs/release
+io.flutter.plugins.videoplayer.video_player_android-resValues-9 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/video_player_android/generated/res/resValues/release
+io.flutter.plugins.videoplayer.video_player_android-rs-10 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/video_player_android/generated/res/rs/release
+io.flutter.plugins.videoplayer.video_player_android-mergeReleaseResources-11 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/video_player_android/intermediates/incremental/release/mergeReleaseResources/merged.dir
+io.flutter.plugins.videoplayer.video_player_android-mergeReleaseResources-12 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/video_player_android/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+io.flutter.plugins.videoplayer.video_player_android-merged_res-13 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/video_player_android/intermediates/merged_res/release

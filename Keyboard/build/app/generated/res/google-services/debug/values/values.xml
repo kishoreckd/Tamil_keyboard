@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">746916425463</string>
+    <string name="google_api_key" translatable="false">AIzaSyBv3InDbUfCOSjoQp8TEJgAQQITHZzfUnM</string>
+    <string name="google_app_id" translatable="false">1:746916425463:android:425c7c0f34ae6e4c1f6df2</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBv3InDbUfCOSjoQp8TEJgAQQITHZzfUnM</string>
+    <string name="google_storage_bucket" translatable="false">tamil-keyboard-93a7b.appspot.com</string>
+    <string name="project_id" translatable="false">tamil-keyboard-93a7b</string>
+</resources>

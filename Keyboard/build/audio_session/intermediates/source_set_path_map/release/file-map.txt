@@ -1,0 +1,15 @@
+com.ryanheise.audio_session-jetified-media2-session-1.2.1-0 /Users/rhino/.gradle/caches/transforms-3/2c216497a1e7e93c76044d824d343cfb/transformed/jetified-media2-session-1.2.1/res
+com.ryanheise.audio_session-media-1.4.1-1 /Users/rhino/.gradle/caches/transforms-3/2c9d0c993d260cc2648ecc56e11d38ad/transformed/media-1.4.1/res
+com.ryanheise.audio_session-core-1.6.0-2 /Users/rhino/.gradle/caches/transforms-3/55bcb5de5f3e83fcdc57239c67e2a357/transformed/core-1.6.0/res
+com.ryanheise.audio_session-jetified-window-java-1.0.0-beta04-3 /Users/rhino/.gradle/caches/transforms-3/981afee23352a7ed07a7f22c39d8b412/transformed/jetified-window-java-1.0.0-beta04/res
+com.ryanheise.audio_session-jetified-media2-common-1.2.1-4 /Users/rhino/.gradle/caches/transforms-3/c33b3211a10cb978c66477fa06e1b675/transformed/jetified-media2-common-1.2.1/res
+com.ryanheise.audio_session-jetified-window-1.0.0-beta04-5 /Users/rhino/.gradle/caches/transforms-3/debfbf90a2465fdd6e98dc208301c729/transformed/jetified-window-1.0.0-beta04/res
+com.ryanheise.audio_session-jetified-annotation-experimental-1.1.0-6 /Users/rhino/.gradle/caches/transforms-3/fdb00f16c339871e988c28b1c0df6b67/transformed/jetified-annotation-experimental-1.1.0/res
+com.ryanheise.audio_session-main-7 /Users/rhino/.pub-cache/hosted/pub.dev/audio_session-0.1.18/android/src/main/res
+com.ryanheise.audio_session-release-8 /Users/rhino/.pub-cache/hosted/pub.dev/audio_session-0.1.18/android/src/release/res
+com.ryanheise.audio_session-pngs-9 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/audio_session/generated/res/pngs/release
+com.ryanheise.audio_session-resValues-10 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/audio_session/generated/res/resValues/release
+com.ryanheise.audio_session-rs-11 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/audio_session/generated/res/rs/release
+com.ryanheise.audio_session-mergeReleaseResources-12 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/audio_session/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.ryanheise.audio_session-mergeReleaseResources-13 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/audio_session/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.ryanheise.audio_session-merged_res-14 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/audio_session/intermediates/merged_res/release

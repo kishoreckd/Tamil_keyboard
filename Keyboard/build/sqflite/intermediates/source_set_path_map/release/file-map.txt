@@ -1,0 +1,12 @@
+com.tekartik.sqflite-core-1.6.0-0 /Users/rhino/.gradle/caches/transforms-3/55bcb5de5f3e83fcdc57239c67e2a357/transformed/core-1.6.0/res
+com.tekartik.sqflite-jetified-window-java-1.0.0-beta04-1 /Users/rhino/.gradle/caches/transforms-3/981afee23352a7ed07a7f22c39d8b412/transformed/jetified-window-java-1.0.0-beta04/res
+com.tekartik.sqflite-jetified-window-1.0.0-beta04-2 /Users/rhino/.gradle/caches/transforms-3/debfbf90a2465fdd6e98dc208301c729/transformed/jetified-window-1.0.0-beta04/res
+com.tekartik.sqflite-jetified-annotation-experimental-1.1.0-3 /Users/rhino/.gradle/caches/transforms-3/fdb00f16c339871e988c28b1c0df6b67/transformed/jetified-annotation-experimental-1.1.0/res
+com.tekartik.sqflite-main-4 /Users/rhino/.pub-cache/hosted/pub.dev/sqflite-2.3.2/android/src/main/res
+com.tekartik.sqflite-release-5 /Users/rhino/.pub-cache/hosted/pub.dev/sqflite-2.3.2/android/src/release/res
+com.tekartik.sqflite-pngs-6 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/sqflite/generated/res/pngs/release
+com.tekartik.sqflite-resValues-7 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/sqflite/generated/res/resValues/release
+com.tekartik.sqflite-rs-8 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/sqflite/generated/res/rs/release
+com.tekartik.sqflite-mergeReleaseResources-9 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/sqflite/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.tekartik.sqflite-mergeReleaseResources-10 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/sqflite/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.tekartik.sqflite-merged_res-11 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/sqflite/intermediates/merged_res/release

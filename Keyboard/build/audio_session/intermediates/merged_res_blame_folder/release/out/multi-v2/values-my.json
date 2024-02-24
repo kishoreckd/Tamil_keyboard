@@ -1,0 +1,68 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.ryanheise.audio_session-mergeReleaseResources-11:/values-my/values-my.xml",
+            "map": [
+                {
+                    "source": "/Users/rhino/.gradle/caches/transforms-3/2c216497a1e7e93c76044d824d343cfb/transformed/jetified-media2-session-1.2.1/res/values-my/values-my.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,159,259,357,484",
+                        "endColumns": "103,99,97,126,132",
+                        "endOffsets": "154,254,352,479,612"
+                    }
+                },
+                {
+                    "source": "/Users/rhino/.gradle/caches/transforms-3/55bcb5de5f3e83fcdc57239c67e2a357/transformed/core-1.6.0/res/values-my/values-my.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "617",
+                        "endColumns": "100",
+                        "endOffsets": "713"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.ryanheise.audio_session-merged_res-13:/values-my/values-my.xml",
+            "map": [
+                {
+                    "source": "/Users/rhino/.gradle/caches/transforms-3/2c216497a1e7e93c76044d824d343cfb/transformed/jetified-media2-session-1.2.1/res/values-my/values-my.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,159,259,357,484",
+                        "endColumns": "103,99,97,126,132",
+                        "endOffsets": "154,254,352,479,612"
+                    }
+                },
+                {
+                    "source": "/Users/rhino/.gradle/caches/transforms-3/55bcb5de5f3e83fcdc57239c67e2a357/transformed/core-1.6.0/res/values-my/values-my.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "617",
+                        "endColumns": "100",
+                        "endOffsets": "713"
+                    }
+                }
+            ]
+        }
+    ]
+}

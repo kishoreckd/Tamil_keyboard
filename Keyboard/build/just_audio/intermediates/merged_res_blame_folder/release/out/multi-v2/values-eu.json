@@ -1,0 +1,116 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.ryanheise.just_audio-mergeReleaseResources-14:/values-eu/values-eu.xml",
+            "map": [
+                {
+                    "source": "/Users/rhino/.gradle/caches/transforms-3/9b33f938b2f281513fc216281f49dd95/transformed/jetified-exoplayer-core-2.18.7/res/values-eu/values-eu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,187,253,325,402,476,587,685",
+                        "endColumns": "68,62,65,71,76,73,110,97,67",
+                        "endOffsets": "119,182,248,320,397,471,582,680,748"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "169,238,301,367,439,516,590,701,799",
+                        "endColumns": "68,62,65,71,76,73,110,97,67",
+                        "endOffsets": "233,296,362,434,511,585,696,794,862"
+                    }
+                },
+                {
+                    "source": "/Users/rhino/.gradle/caches/transforms-3/f5e9b62c394a92489fdff1750ac31596/transformed/core-1.7.0/res/values-eu/values-eu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "16",
+                        "startColumns": "4",
+                        "startOffsets": "1328",
+                        "endColumns": "100",
+                        "endOffsets": "1424"
+                    }
+                },
+                {
+                    "source": "/Users/rhino/.gradle/caches/transforms-3/2c216497a1e7e93c76044d824d343cfb/transformed/jetified-media2-session-1.2.1/res/values-eu/values-eu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,169,268,371,499",
+                        "endColumns": "113,98,102,127,130",
+                        "endOffsets": "164,263,366,494,625"
+                    },
+                    "to": {
+                        "startLines": "2,12,13,14,15",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,867,966,1069,1197",
+                        "endColumns": "113,98,102,127,130",
+                        "endOffsets": "164,961,1064,1192,1323"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.ryanheise.just_audio-merged_res-16:/values-eu/values-eu.xml",
+            "map": [
+                {
+                    "source": "/Users/rhino/.gradle/caches/transforms-3/9b33f938b2f281513fc216281f49dd95/transformed/jetified-exoplayer-core-2.18.7/res/values-eu/values-eu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,187,253,325,402,476,587,685",
+                        "endColumns": "68,62,65,71,76,73,110,97,67",
+                        "endOffsets": "119,182,248,320,397,471,582,680,748"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "169,238,301,367,439,516,590,701,799",
+                        "endColumns": "68,62,65,71,76,73,110,97,67",
+                        "endOffsets": "233,296,362,434,511,585,696,794,862"
+                    }
+                },
+                {
+                    "source": "/Users/rhino/.gradle/caches/transforms-3/f5e9b62c394a92489fdff1750ac31596/transformed/core-1.7.0/res/values-eu/values-eu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "16",
+                        "startColumns": "4",
+                        "startOffsets": "1328",
+                        "endColumns": "100",
+                        "endOffsets": "1424"
+                    }
+                },
+                {
+                    "source": "/Users/rhino/.gradle/caches/transforms-3/2c216497a1e7e93c76044d824d343cfb/transformed/jetified-media2-session-1.2.1/res/values-eu/values-eu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,169,268,371,499",
+                        "endColumns": "113,98,102,127,130",
+                        "endOffsets": "164,263,366,494,625"
+                    },
+                    "to": {
+                        "startLines": "2,12,13,14,15",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,867,966,1069,1197",
+                        "endColumns": "113,98,102,127,130",
+                        "endOffsets": "164,961,1064,1192,1323"
+                    }
+                }
+            ]
+        }
+    ]
+}

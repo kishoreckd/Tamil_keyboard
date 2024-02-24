@@ -1,0 +1,13 @@
+io.flutter.plugins.webviewflutter.webview_flutter_android-core-1.6.0-0 /Users/rhino/.gradle/caches/transforms-3/55bcb5de5f3e83fcdc57239c67e2a357/transformed/core-1.6.0/res
+io.flutter.plugins.webviewflutter.webview_flutter_android-jetified-window-java-1.0.0-beta04-1 /Users/rhino/.gradle/caches/transforms-3/981afee23352a7ed07a7f22c39d8b412/transformed/jetified-window-java-1.0.0-beta04/res
+io.flutter.plugins.webviewflutter.webview_flutter_android-webkit-1.7.0-2 /Users/rhino/.gradle/caches/transforms-3/d0d5bf2387d6685d645281915b81fa1e/transformed/webkit-1.7.0/res
+io.flutter.plugins.webviewflutter.webview_flutter_android-jetified-window-1.0.0-beta04-3 /Users/rhino/.gradle/caches/transforms-3/debfbf90a2465fdd6e98dc208301c729/transformed/jetified-window-1.0.0-beta04/res
+io.flutter.plugins.webviewflutter.webview_flutter_android-jetified-annotation-experimental-1.1.0-4 /Users/rhino/.gradle/caches/transforms-3/fdb00f16c339871e988c28b1c0df6b67/transformed/jetified-annotation-experimental-1.1.0/res
+io.flutter.plugins.webviewflutter.webview_flutter_android-main-5 /Users/rhino/.pub-cache/hosted/pub.dev/webview_flutter_android-3.14.0/android/src/main/res
+io.flutter.plugins.webviewflutter.webview_flutter_android-release-6 /Users/rhino/.pub-cache/hosted/pub.dev/webview_flutter_android-3.14.0/android/src/release/res
+io.flutter.plugins.webviewflutter.webview_flutter_android-pngs-7 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/webview_flutter_android/generated/res/pngs/release
+io.flutter.plugins.webviewflutter.webview_flutter_android-resValues-8 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/webview_flutter_android/generated/res/resValues/release
+io.flutter.plugins.webviewflutter.webview_flutter_android-rs-9 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/webview_flutter_android/generated/res/rs/release
+io.flutter.plugins.webviewflutter.webview_flutter_android-mergeReleaseResources-10 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/webview_flutter_android/intermediates/incremental/release/mergeReleaseResources/merged.dir
+io.flutter.plugins.webviewflutter.webview_flutter_android-mergeReleaseResources-11 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/webview_flutter_android/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+io.flutter.plugins.webviewflutter.webview_flutter_android-merged_res-12 /Users/rhino/Downloads/flutter_app/Tamil_keyboard/build/webview_flutter_android/intermediates/merged_res/release
