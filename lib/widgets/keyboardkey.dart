@@ -65,7 +65,7 @@ class _KeyboardKeyState extends ConsumerState<KeyboardKeys> {
           child: InkWell(
             splashColor: widget.isdarkmode
                 ? const Color.fromARGB(255, 120, 120, 120)
-                : Color.fromARGB(255, 131, 196, 224),
+                : const Color.fromARGB(255, 131, 196, 224),
             customBorder: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
             ),
@@ -239,7 +239,7 @@ class _EndKeyState extends ConsumerState<EndKey> {
           child: InkWell(
             splashColor: widget.isdarkmode
                 ? const Color.fromARGB(255, 120, 120, 120)
-                : Color.fromARGB(255, 131, 196, 224),
+                : const Color.fromARGB(255, 131, 196, 224),
             customBorder: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
             ),
@@ -299,7 +299,7 @@ class _SpacebarState extends ConsumerState<Spacebar> {
           InkWell(
             splashColor: widget.isdarkmode
                 ? const Color.fromARGB(255, 120, 120, 120)
-                : Color.fromARGB(255, 131, 196, 224),
+                : const Color.fromARGB(255, 131, 196, 224),
             customBorder: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
             ),

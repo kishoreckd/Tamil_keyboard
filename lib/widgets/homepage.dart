@@ -79,18 +79,30 @@ class _HomePageState extends ConsumerState<MyHomePage> {
           // DropdownButton to switch between keyboard layouts
           DropdownButton<int>(
             value: selectedLayout,
-            items: const [
+            items: [
               DropdownMenuItem(
                 value: 1,
-                child: Text('Layout 1', style: TextStyle(color: Colors.white)),
+                child: Text('Layout 1',
+                    style: TextStyle(
+                        color: isDarkMode
+                            ? Colors.white
+                            : const Color(0XFF534D73))),
               ),
               DropdownMenuItem(
                 value: 2,
-                child: Text('Layout 2 ', style: TextStyle(color: Colors.white)),
+                child: Text('Layout 2 ',
+                    style: TextStyle(
+                        color: isDarkMode
+                            ? Colors.white
+                            : const Color(0XFF534D73))),
               ),
               DropdownMenuItem(
                 value: 3,
-                child: Text('Layout 3 ', style: TextStyle(color: Colors.white)),
+                child: Text('Layout 3 ',
+                    style: TextStyle(
+                        color: isDarkMode
+                            ? Colors.white
+                            : const Color(0XFF534D73))),
               ),
             ],
             onChanged: (newValue) {
@@ -98,7 +110,8 @@ class _HomePageState extends ConsumerState<MyHomePage> {
                 selectedLayout = newValue!;
               });
             },
-            dropdownColor: const Color.fromARGB(255, 120, 120, 120),
+            dropdownColor:
+                isDarkMode ? const Color.fromARGB(255, 120, 120, 120) : Colors.white,
           ),
         ],
       ),
