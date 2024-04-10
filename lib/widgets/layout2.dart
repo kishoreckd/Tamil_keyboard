@@ -267,7 +267,7 @@ class _Layout2State extends ConsumerState<Layout2> {
   }
 
   renderKeyboard() {
-    return uyirEzhuthukal2
+    return uyirEzhuthukal
         .map(
           (x) => Row(
             children: x.map((y) {
@@ -286,7 +286,7 @@ class _Layout2State extends ConsumerState<Layout2> {
   }
 
   renderKeyboard2() {
-    return tamilSymbols2
+    return tamilSymbols
         .map(
           (x) => Row(
             children: x.map((y) {
