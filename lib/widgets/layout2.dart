@@ -1,187 +1,12 @@
 import 'dart:async';
-import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
-import '../constant/webviewscreen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:keyboard_tamil/widgets/layout2.dart';
-import 'package:keyboard_tamil/constant/svgicons.dart';
-import 'package:keyboard_tamil/widgets/helpscreen.dart';
+import 'package:flutter/services.dart';
+import '../constant/constant_keys.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:keyboard_tamil/widgets/keyboardkey.dart';
-import 'package:keyboard_tamil/constant/constant_keys.dart';
-// ignore_for_file: unused_import
 
-// ignore_for_file: unused_element
-// ignore_for_file: unused_local_variable
-// ignore_for_file: file_names
-class MyHomePage extends ConsumerStatefulWidget {
-  const MyHomePage({super.key});
-  @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _HomePageState();
-}
-
-class _HomePageState extends ConsumerState<MyHomePage> {
-  OverlayEntry? overlayEntry;
-  final TextEditingController _textController = TextEditingController();
-  bool isDarkMode = true; // Track the current mode
-
-  @override
-  Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
-    return Scaffold(
-      backgroundColor: isDarkMode
-          ? const Color(0XFF080808)
-          : const Color(0XFFFFFFFF), // Apply background color based on mode
-      appBar: AppBar(
-        backgroundColor: isDarkMode
-            ? const Color(0XFF080808)
-            : const Color(0XFFFFFFFF), // Apply app bar color based on mode
-        title: Text(
-          'தமிழ் விசைப்பலகை',
-          style: TextStyle(
-            color:
-                isDarkMode ? const Color(0XFFE9ECF1) : const Color(0XFF534D73),
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        centerTitle: false,
-        actions: [
-          IconButton(
-            icon:
-                SvgPicture.string(isDarkMode ? feedbackIcon : feedbackFocused),
-            color:
-                isDarkMode ? const Color(0XFFE9ECF1) : const Color(0XFF0d0c1d),
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const WebViewScreen(
-                  name: 'Feedback',
-                  url:
-                      'https://docs.google.com/forms/d/e/1FAIpQLSfXX2weStTmlXkzO8Iwi3vr4MgIK8-eGBmQCSzztbZle3SiXg/viewform',
-                ),
-              ));
-            },
-          ),
-          IconButton(
-            icon: isDarkMode
-                ? const Icon(Icons.light_mode)
-                : const Icon(Icons.dark_mode),
-            color:
-                isDarkMode ? const Color(0XFFE9ECF1) : const Color(0XFF534D73),
-            onPressed: () {
-              setState(() {
-                isDarkMode = !isDarkMode;
-              });
-            },
-          ),
-        ],
-      ),
-      body: Builder(
-        builder: (BuildContext context) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: isDarkMode
-                        ? const Color(0XFF202020)
-                        : const Color.fromARGB(255, 196, 199,
-                            202), // Apply background color based on mode
-                  ),
-                  height: screenHeight * 0.5,
-                  padding: const EdgeInsets.all(16.0),
-                  child: SingleChildScrollView(
-                    child: TextField(
-                      showCursor: true,
-                      readOnly: true,
-                      style: TextStyle(
-                        color: isDarkMode
-                            ? const Color(0XFFE9ECF1)
-                            : const Color(0XFF0d0c1d),
-                        fontWeight: FontWeight.w500,
-                      ),
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'எழுதுக....',
-                        hintStyle: TextStyle(
-                            color: isDarkMode
-                                ? const Color(0XFFB1B2B5)
-                                : const Color(0XFF202020)
-
-                            // Color(0XFFE9ECF1)38,
-                            ),
-                      ),
-                      maxLines: null,
-                      keyboardType: TextInputType.multiline,
-                      controller: _textController,
-                      onTap: () {},
-                    ),
-                  ),
-                ),
-              ),
-              Ink(
-                decoration: BoxDecoration(
-                  color: isDarkMode
-                      ? const Color(0XFF202020)
-                      : const Color.fromARGB(255, 196, 199,
-                          202), // Apply background color based on mode
-                ),
-                child: Layout2(
-                    onKeyPressed: (String value) {},
-                    textController: _textController,
-                    isdarkmode: isDarkMode),
-                // child: CustomKeyboard(
-                //   onKeyPressed: (String value) {},
-                //   textController: _textController,
-                //   isdarkmode: isDarkMode,
-                // ),
-              ),
-            ],
-          );
-        },
-      ),
-    );
-  }
-
-  void _showCustomKeyboard(BuildContext context) {
-    overlayEntry = OverlayEntry(
-      builder: (context) => Positioned(
-        bottom: 0,
-        left: 0,
-        right: 0,
-        child: Material(
-          child: Ink(
-            decoration: const BoxDecoration(color: Color(0XFF202020)),
-            child: Layout2(
-                onKeyPressed: (String value) {},
-                textController: _textController,
-                isdarkmode: isDarkMode),
-
-            // child: CustomKeyboard(
-            //   isdarkmode: isDarkMode,
-            //   onKeyPressed: (String value) {},
-            //   textController: _textController,
-            // ),
-          ),
-        ),
-      ),
-    );
-
-    Overlay.of(context).insert(overlayEntry!);
-  }
-
-  @override
-  void dispose() {
-    overlayEntry?.remove();
-    super.dispose();
-  }
-}
-
-class CustomKeyboard extends ConsumerStatefulWidget {
-  const CustomKeyboard(
+class Layout2 extends ConsumerStatefulWidget {
+  const Layout2(
       {super.key,
       required this.onKeyPressed,
       required this.textController,
@@ -191,10 +16,10 @@ class CustomKeyboard extends ConsumerStatefulWidget {
   final TextEditingController textController;
   final bool isdarkmode;
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _CustomKeyboardState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _Layout2State();
 }
 
-class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
+class _Layout2State extends ConsumerState<Layout2> {
   late String text;
 
   List? textStore;
@@ -442,7 +267,7 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
   }
 
   renderKeyboard() {
-    return uyirEzhuthukal
+    return uyirEzhuthukal2
         .map(
           (x) => Row(
             children: x.map((y) {
@@ -461,7 +286,7 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
   }
 
   renderKeyboard2() {
-    return tamilSymbols
+    return tamilSymbols2
         .map(
           (x) => Row(
             children: x.map((y) {
@@ -480,7 +305,7 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
   }
 
   renderKeyboard3() {
-    return meiEzhuthukal
+    return meiEzhuthukal2
         .map(
           (x) => Row(
             children: x.map((y) {
@@ -502,8 +327,7 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final isMobile = screenWidth < 600;
-    // final padding = isMobile ? 1.8 : 3.6;
-    // final height = isMobile ? 40.0 : MediaQuery.of(context).size.height * 0.055;
+
     final width = isMobile ? 36.0 : screenWidth * 0.09;
     return Ink(
       child: Padding(
@@ -554,9 +378,9 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
                     isdarkmode: widget.isdarkmode,
                   ),
                   EndKey(
-                      label: '்',
+                      label: 'க்ஷ',
                       onTap: keyPress,
-                      value: '்',
+                      value: 'க்ஷ',
                       isdarkmode: widget.isdarkmode),
                   EndKey(
                       label: '.',
