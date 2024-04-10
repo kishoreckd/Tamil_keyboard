@@ -30,7 +30,7 @@ class _KeyboardKeyState extends ConsumerState<KeyboardKeys> {
         child: Text(
           widget.label,
           style: TextStyle(
-            fontSize: 14.0,
+            fontSize: 17.0,
             color: widget.isdarkmode
                 ? const Color(0XFFE9ECF1)
                 : const Color(0XFF534D73),
@@ -114,25 +114,6 @@ class SymbolsKeyboardKey extends ConsumerStatefulWidget {
 class _SymbolsKeyboardKeyState extends ConsumerState<SymbolsKeyboardKey> {
   bool isInTextStore = false;
 
-  // renderLabel() {
-  //   if (widget.label is String) {
-  //     return Center(
-  //       child: Text(
-  //         widget.label,
-  //         style: TextStyle(
-  //           fontSize: 14.0,
-  //           color: isInTextStore
-  //               ? Colors.red
-  //               : Color(0XFFE9ECF1), // Change color conditionally
-  //         ),
-  //         textAlign: TextAlign.center,
-  //       ),
-  //     );
-  //   } else {
-  //     return widget.label;
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     final symbols = ref.watch(symbolsNameProvider);
@@ -183,7 +164,7 @@ class _SymbolsKeyboardKeyState extends ConsumerState<SymbolsKeyboardKey> {
                 child: Text(
                   widget.label,
                   style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: 17.0,
                     fontWeight:
                         isInTextStore ? FontWeight.w800 : FontWeight.w600,
                     color: widget.isdarkmode
@@ -226,7 +207,7 @@ class _EndKeyState extends ConsumerState<EndKey> {
         child: Text(
           widget.label,
           style: TextStyle(
-            fontSize: 14.0,
+            fontSize: 17.0,
             color: widget.isdarkmode
                 ? const Color(0XFFE9ECF1)
                 : const Color(0XFF534D73),
