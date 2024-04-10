@@ -589,7 +589,7 @@ class _CustomKeyboardState extends ConsumerState<CustomKeyboard> {
                         // Adjust the padding based on screen width
                       ),
                       child: InkWell(
-            splashColor:widget.isdarkmode? const Color.fromARGB(255, 120, 120, 120):Color.fromARGB(255, 131, 196, 224),                        onTap: () {
+            splashColor:widget.isdarkmode? const Color.fromARGB(255, 120, 120, 120):const Color.fromARGB(255, 131, 196, 224),                        onTap: () {
                           setState(() {
                             onBackspacePress();
                           });
