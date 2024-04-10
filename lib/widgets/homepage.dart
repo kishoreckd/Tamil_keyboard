@@ -25,6 +25,7 @@ class _HomePageState extends ConsumerState<MyHomePage> {
   OverlayEntry? overlayEntry;
   final TextEditingController _textController = TextEditingController();
   bool isDarkMode = true; // Track the current mode
+  int selectedLayout = 1; // Track the selected keyboard layout
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +76,30 @@ class _HomePageState extends ConsumerState<MyHomePage> {
               });
             },
           ),
+          // DropdownButton to switch between keyboard layouts
+          DropdownButton<int>(
+            value: selectedLayout,
+            items: const [
+              DropdownMenuItem(
+                value: 1,
+                child: Text('Layout 1', style: TextStyle(color: Colors.white)),
+              ),
+              DropdownMenuItem(
+                value: 2,
+                child: Text('Layout 2 ', style: TextStyle(color: Colors.white)),
+              ),
+              DropdownMenuItem(
+                value: 3,
+                child: Text('Layout 3 ', style: TextStyle(color: Colors.white)),
+              ),
+            ],
+            onChanged: (newValue) {
+              setState(() {
+                selectedLayout = newValue!;
+              });
+            },
+            dropdownColor: const Color.fromARGB(255, 120, 120, 120),
+          ),
         ],
       ),
       body: Builder(
@@ -92,7 +117,7 @@ class _HomePageState extends ConsumerState<MyHomePage> {
                         : const Color.fromARGB(255, 196, 199,
                             202), // Apply background color based on mode
                   ),
-                  height: screenHeight * 0.3,
+                  height: screenHeight * 0.4,
                   padding: const EdgeInsets.all(16.0),
                   child: SingleChildScrollView(
                     child: TextField(
@@ -123,23 +148,47 @@ class _HomePageState extends ConsumerState<MyHomePage> {
                   ),
                 ),
               ),
-              Ink(
-                decoration: BoxDecoration(
-                  color: isDarkMode
-                      ? const Color(0XFF202020)
-                      : const Color.fromARGB(255, 196, 199,
-                          202), // Apply background color based on mode
-                ),
-                child: Layout3(
+              // Display the selected keyboard layout
+              if (selectedLayout == 1)
+                Ink(
+                  decoration: BoxDecoration(
+                    color: isDarkMode
+                        ? const Color(0XFF202020)
+                        : const Color.fromARGB(255, 196, 199, 202),
+                  ),
+                  child: CustomKeyboard(
                     onKeyPressed: (String value) {},
                     textController: _textController,
-                    isdarkmode: isDarkMode),
-                // child: CustomKeyboard(
-                //   onKeyPressed: (String value) {},
-                //   textController: _textController,
-                //   isdarkmode: isDarkMode,
-                // ),
-              ),
+                    isdarkmode: isDarkMode,
+                  ),
+                )
+              else if (selectedLayout == 2)
+                Ink(
+                  decoration: BoxDecoration(
+                    color: isDarkMode
+                        ? const Color(0XFF202020)
+                        : const Color.fromARGB(255, 196, 199, 202),
+                  ),
+                  child: Layout2(
+                    onKeyPressed: (String value) {},
+                    textController: _textController,
+                    isdarkmode: isDarkMode,
+                  ),
+                )
+              else
+                Ink(
+                  decoration: BoxDecoration(
+                    color: isDarkMode
+                        ? const Color(0XFF202020)
+                        : const Color.fromARGB(255, 196, 199,
+                            202), // Apply background color based on mode
+                  ),
+                  child: Layout3(
+                    onKeyPressed: (String value) {},
+                    textController: _textController,
+                    isdarkmode: isDarkMode,
+                  ),
+                )
             ],
           );
         },
